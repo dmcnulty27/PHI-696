@@ -82,17 +82,17 @@ Note: The standard interpretation of the logical symbols - "∨", "∧", "→", 
   ```
   (a) (A→B)→C
   
-  	(A ∨ B V C) ∧ (¬A V B V C) ∧ (A V ¬B V C) ∧ (A V ¬B V ¬C) ∧ (¬A V ¬B V C)
+  	¬((A ∨ B V C) ∧ (¬A V B V C) ∧ (A V ¬B V C) ∧ (A V ¬B V ¬C) ∧ (¬A V ¬B V C)))
   
   (b) (A→(B∨C))∨(C→¬A)
   
-  	(A V B V C) ∧ (A V ¬B V C) ∧ (A V ¬B V ¬C) ∧ (A V B V ¬C) ∧ (¬A V B V C) ∧ (¬A V ¬B V C) ∧ (¬A V B V ¬C) ∧ (¬A V ¬B V ¬C)
+  	¬((A V B V C) ∧ (A V ¬B V C) ∧ (A V ¬B V ¬C) ∧ (A V B V ¬C) ∧ (¬A V B V C) ∧ (¬A V ¬B V C) ∧ (¬A V B V ¬C) ∧ (¬A V ¬B V ¬C))
   
  	 It's a Tautology?
   
   (c) (¬A∧¬B∧C)∨(¬A∧¬C)∨(B∧C)∨A 
   
-  	(A V B V C) ∧ (A V ¬B V C) ∧ (A V ¬B V ¬C) ∧ (A V B V ¬C) ∧ (¬A V B V C) ∧ (¬A V ¬B V C) ∧ (¬A V ¬B V ¬C) ∧ (¬A V B V ¬C) 
+  	¬((A V B V C) ∧ (A V ¬B V C) ∧ (A V ¬B V ¬C) ∧ (A V B V ¬C) ∧ (¬A V B V C) ∧ (¬A V ¬B V C) ∧ (¬A V ¬B V ¬C) ∧ (¬A V B V ¬C)) 
   
  	 It's a Tautology?
   ```
@@ -101,49 +101,41 @@ Note: The standard interpretation of the logical symbols - "∨", "∧", "→", 
   
   ```
   (a)  B(x,y) that says that x is a brother of y
-  	Neither P(x,y) nor P(y,x) is not true since x and y are sibilings. (unless, we can include incest)
-	F(x) is not true since x is y's brother.
-	F(y) could be true.
+  	B(x,y) := ∃z.(P(zx) ∧ P(zy)) ∧ (z≠x) ∧ (z≠y) ∧ ¬F(x)
+    from Giacomo
 	
   (b)  A(x,y) that says that x is an aunt of y 
-  	Niether P(x,y) nor P(y,x) is not true since neither x nor y have parental relations with one another. (unless, we can include incest)
-	F(x) is true since x is an aunt.
-	F(y) could be true if y is a female.
+  	A(x,y) := ∃z.P(zy) ∧ ∃w.(P(wz) ∧ P(wx)) ∧ F(x)
+    from Giacomo
   	
   (c)  C(x,y) that says that x and y are cousins
-	Neither P(x,y) nor P(y,x) are true since neither x nor y have parental relations with one another. (unless, we can include incest)
-	F(x) could be true if x is a female.
-	F(y) could be true if y is a female.
-	
+   C(x,y) := ∃z.P(zy) ∧ ∃w.P(wx) ∧ ∃u.(P(uz) ∧ P(uw))
+   from Giacomo
+
   (d)  O(x) that says that x is an only child  
-  	F(x) could be true if x is a female.
+    O(x) := ∃y.(P(yx) ∧ ¬∃z.(P(yz)))
 	
   (e)  T(x) that says that x has exactly two brothers 
-  	F(x) could be true if x is a female.
+  	T(x) := DNE
+    Because there is no way to import the information of a male sibiling with the given relations.
   ```
 
 4. Let V be a vocabulary of the attribute (concept) language with complements (ALC) consisting of a role name "parent_of" and a concept name "Male". Interpret parent_of as "x is a parent of y" and M as "x is male". Where possible define the following formulas in this vocabulary; where not possible, explain why: 
   ```
   (a)  B that says that x is a brother of y
-  	Neither 'x is parent_of y' nor 'y is parent_of x' is true since they do not have a parental relation with each other. (unless, we can include incest)
-  	x is Male.
-	'y is Male' could be true if y was male.
+  	
 	
   (b)  A that says that x is an aunt of y
-  	Neither 'x is parent_of y' nor 'y is parent_of x' is true since they do not have a parental relation with each other. (unless, we can include incest)
-	'x is Male' cannot be true since x is an aunt.
-	'y is Male' could be true if y was male.
+  	
   	
   (c)  C that says that x and y are cousins
-  	Neither 'x is parent_of y' nor 'y is parent_of x' is true since they do not have a parental relation with each other. (unless, we can include incest)
-	'x is Male' could be true if x was male.
-	'y is Male' could be true if y was male.
+  	
   	
   (d)  O that says that x is an only child  
-  	'x is Male' could be true if x was male.
+  	
 	
   (e)  T that says that x has exactly two brothers 
-  	'x is Male' could be true if x was male.
+  	
   ```
 
 
