@@ -26,7 +26,7 @@ Tip #4: Work together _as a team_.
   (e)  not definable 
   
 2. Use your axioms from question 1 as the basis of an ALCI T-Box. Supplement this T-box with whatever other axioms you like, as well as an A-box, so that you ultimately construct a knowledge base K = (T,A). Provide a model of K. This may be graphical or symbolic or both.
-
+   
 Knowledge Base = {TBox: 
 
 3. Translate the following first-order logic axioms into ALCI:
