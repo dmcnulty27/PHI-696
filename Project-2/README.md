@@ -14,7 +14,7 @@ Tip #4: Work together _as a team_.
   (a) Not definable 
   
   (b) iPP that says that y is a proper part of x
-  (b) Not deinable 
+  (b) Not definable 
   
   (c) iP that says that y has x as part 
   (c) iP ≡ ∀part_of-.
