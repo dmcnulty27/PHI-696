@@ -86,27 +86,35 @@ I will assume {a} to be Donnie
 
 (a) ∃r.C and ∀r.C
 
-(a) ∃ParentOf.Capricorn: Things that are biological parents of Capricorns
+(a) There is some thing that is role related to all xs and this is under concept C. 
+    ∃ParentOf.Capricorn: Things that are biological parents of Capricorns
 
-(a) ∀ParentOf.Capricorn: All biological parents of Capricorns 
+(a) If there is some thing that is role related to all instances of x, this falls under the reverese of concept C.
+    ∀ParentOf.Capricorn: All biological parents of Capricorns 
 
 (b) ∃r-.C and ∀r-.C
 
-(b) ∃r-.C and ∀r-.C∃ParentOf-.Capricorn: Things that are biological children of parents are Capricorns 
+(b) There is some thing that is role related to all xs and belongs to concept C
+    ∃r-.C and ∀r-.C∃ParentOf-.Capricorn: Things that are biological children of parents are Capricorns 
 
-(b) ∀ParentOf-.ParentedCapricorn: All things that are biological children of parents are Capricorns
+(b) If there is a thing that is role-related to all instances of x then this thing belongs to the reverse of concept x.  
+    ∀ParentOf-.ParentedCapricorn: All things that are biological children of parents are Capricorns
 
 (c) <=nr and <=nr.C
 
-(c) at most n Parent of
+(c) Role r connects all instances of x to no more then n elements
+    at most n Parent of
 
-(c) at most n ParentOf.Capricorn: There is at most n of things that are parents of Capricorn children
+(c) Role r connects all instances of x to no more than n elemetns that belong to concept C
+    at most n ParentOf.Capricorn: There is at most n of things that are parents of Capricorn children
 
 (d) ∃r-.C and ∃r-.{a} 
 
-(d) ∃ParentOf-.Capricorn: Things that are biological children are Capricorns
+(d) For all instances of x there is some thing y thich is concept reverse reltaed to it and belongs under concept C.
+    ∃ParentOf-.Capricorn: Things that are biological children are Capricorns
 
-(d) ∃ParentOf-.Donnie: Things that are biological children of Donnie are Capricorns
+(d) Role R connects all instances of x to no more than n elements and these belong to concept C.
+    ∃ParentOf-.Donnie: Things that are biological children of Donnie are Capricorns
 
 7. There is a delightfully helpful subreddit called "ELI5" which stands for something like "explain it like I'm 5" where users post conceptually challenging questions and other users attempt to provide explanations in simple, jargon-free, terms that presumably a 5 year-old could understand. Using this as a model, explain the finite model property. Be sure to provide a simple example and explain when the property might be important, and when it is not so important.
 
@@ -114,7 +122,7 @@ Answer to 7. First to define some terms, Attributive (Concept) Language with Com
 
 8. Following up on the preceding , explain the tree model property. Be sure to provide a simple example and explain when the property might be important, and when it is not so important.
 
-Answer to 8. First to define some terms, Attributive (Concept) Language with Complements is what ALC stands for -- a concept is an idea or general notion. The tree model property is a property of ALC in that every satisfiable concept has a tree model property. Let's pause here for another defintion, what is to a satisfiable concept? A concept is statisfiable so long as the concept is true under some assignment of values or on some intrepretation. Now imagine a Tree, it has beautiful purple spring buds at the top, supportive branches connecting the budding branches to larger substaintial branches ulitmately connecting the buds to the trunk or base of the tree. We can consider the concepts as the buds, the supportive bud branches are the elements of a specified sphere of activity or knowledge (or domain). The specified sphere is laid out in something called a Tbox, the TBox is the knowledge base of Trunk of the Tree. TBox is to Trunk as Buds are to Concepts and every concept is supported through a branch of specified elements. What are these elements? Consider x to be an element of A when x is one of the entities/definitions in the collection of entities in A. Now what we see of the Tree is made up of Concepts at the top being supported by specified entities connecting to the Trunk. 
+Answer to 8. First to define some terms, Attributive (Concept) Language with Complements is what ALC stands for -- a concept is an idea or general notion. The tree model property is a property of ALC in that every satisfiable concept has a tree model property. Let's pause here for another defintion, what is to a satisfiable concept? A concept is statisfiable so long as the concept is true under some assignment of values or on some intrepretation. Now imagine a Tree, it has beautiful purple spring buds at the top, supportive branches connecting the budding branches to larger substaintial branches ulitmately connecting the buds to the trunk or base of the tree. We can consider the concepts as the buds, the supportive bud branches are the elements of a specified sphere of activity or knowledge (or domain). The specified sphere is laid out in something called a TBox, the TBox is the knowledge base of Trunk of the Tree. TBox is to Trunk as Buds are to Concepts and every concept is supported through a branch of specified elements. What are these elements? Consider x to be an element of A when x is one of the entities/definitions in the collection of entities in A. Now what we see of the Tree is made up of Concepts at the top being supported by specified entities connecting to the Trunk. 
 
 9. Open the Protege editor and create object properties for each of the role names that you constructed in question 1. You should have at least 6 object properties. Assert in the editor that P is a sub-property of O, that P is transitive, and that O is symmetric. Next, add individuals - a, b, c - to the file and assert that c is part of a and that c overlaps b. Running the reasoner should reveal - highlighted in yellow if you select the individual c - that c overlaps a. Using the discussion in the selections from chapter 4 of the Baader, et. al. text as a guide, explain how the tableau algorithm is generating this inference. Also, provide a screenshot of the results of your reasoner run with c highlighted.
 
