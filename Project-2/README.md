@@ -86,27 +86,27 @@ I will assume {a} to be Donnie
 
 (a) ∃r.C and ∀r.C
 
-(a) Corresponding to all instances that are related to some instances of C
+(a) Corresponds to all instances that relates to some instances of C
 
-(a) Corresponding to all instances that are related to only instances of C
+(a) Corresponds to all instances that relates to only instances of C
 
 (b) ∃r-.C and ∀r-.C
 
-(b) Corresponding to some instance of C that relates to all instances
+(b) Corresponds to some instance of C that are related to all instances
 
-(b) Corresponding to only instances of C that relate to all instances
+(b) Corresponds to only instances of C that are related to all instances
 
 (c) <=nr and <=nr.C
 
-(c) at most n Parent of
+(c) Corresponds to restrictions that r is related to no more than n instances
 
-(c) at most n ParentOf.Capricorn: There is at most n of things that are parents of Capricorn children
+(c) Corresponds to restrictions that r is realted to no more than n instances that relates to C
 
 (d) ∃r-.C and ∃r-.{a} 
 
-(d) ∃ParentOf-.Capricorn: Things that are biological children are Capricorns
+(d) Corresponds to some instance of C that are related to all instances
 
-(d) ∃ParentOf-.Donnie: Things that are biological children of Donnie are Capricorns
+(d) Corresponds to some instance of C that are related to the instance mapped to by the name a
 
 7. There is a delightfully helpful subreddit called "ELI5" which stands for something like "explain it like I'm 5" where users post conceptually challenging questions and other users attempt to provide explanations in simple, jargon-free, terms that presumably a 5 year-old could understand. Using this as a model, explain the finite model property. Be sure to provide a simple example and explain when the property might be important, and when it is not so important.
 
