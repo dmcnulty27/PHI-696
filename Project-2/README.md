@@ -59,8 +59,7 @@ Note that we can drop the first universal quantifiers :)
 
 6. Explain the difference - using natural language - between the description logic expressions:
 
-I will make the assumption (if allowed) the Role is Biological Parent of. and C is the concept Capricorn child
-I will assume {a} to be Donnie
+
 ⊔ ⊓ ⊧ ⊭ ⊦ ⊬ ⊏ ⊐ ⊑ ⊒ C ¬ ≡ ≠ ≥ ≤ ∃ ∀
 
 (a) ∃r.C and ∀r.C
