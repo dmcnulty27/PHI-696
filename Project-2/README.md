@@ -86,15 +86,15 @@ I will assume {a} to be Donnie
 
 (a) ∃r.C and ∀r.C
 
-(a) ∃ParentOf.Capricorn: Things that are biological parents of Capricorns
+(a) Corresponding to all instances that are related to some instances of C
 
-(a) ∀ParentOf.Capricorn: All biological parents of Capricorns 
+(a) Corresponding to all instances that are related to only instances of C
 
 (b) ∃r-.C and ∀r-.C
 
-(b) ∃r-.C and ∀r-.C∃ParentOf-.Capricorn: Things that are biological children of parents are Capricorns 
+(b) Corresponding to some instance of C that relates to all instances
 
-(b) ∀ParentOf-.ParentedCapricorn: All things that are biological children of parents are Capricorns
+(b) Corresponding to only instances of C that relate to all instances
 
 (c) <=nr and <=nr.C
 
