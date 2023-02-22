@@ -10,20 +10,22 @@ Tip #4: Work together _as a team_.
 
 1. Let V be a vocabulary of ALCI consisting of a role name "P". Interpret part_of as "x is a part of y". Using this role name, define the following formulas in this language:
 
-  (a)  PP that says that x is a proper part of y
-  (a)  PP = ∀part_of
+⊔ ⊓ ⊧ ⊭ ⊦ ⊬ ⊏ ⊐ ⊑ ⊒ C ¬ ≡ ≠ ≥ ≤ ∃ ∀
+
+  (a)  PP that says that x is a proper part of y and the inverse (y is a proper part of x) is not true 
+  (a)  PP = P ⊓ ¬P- 
   
-  (b) iPP that says that y is a proper part of x
-  (b) iPP=∀part_of
+  (b) iPP that says that it is not the case the x is a proper part of y and the inverse (y is a proper part of x) is true
+  (b) iPP= ¬P ⊓ P-
   
-  (c) iP that says that y has x as part 
-  (c) iP ≡ ∀part_of-
+  (c) iP that says that y has x as a proper part and the inverse (y is a proper part of x) is true
+  (c) iP ≡ P-
    
-  (d)  O that says that x overlaps y
-  (d)  0=∀part_of⊓∃part_of
+  (d)  O that says that x overlaps y -- the inverse of for all instances of x it corresponds to some proper part is roughly (some proper parts corresponds to x) and x corresponds to some proper part
+  (d)  O ≡ ∃P-.(∃P)
   
-  (e)  D that says that x and y are disjoint 
-  (e)  D=∀¬part_of
+  (e)  D that says that x and y are disjoint -- x and y are disjointed such that x has no proper part of y or no parts in common 
+  (e)  D ≡ ¬O 
   
 2. Use your axioms from question 1 as the basis of an ALCI T-Box. Supplement this T-box with whatever other axioms you like, as well as an A-box, so that you ultimately construct a knowledge base K = (T,A). Provide a model of K. This may be graphical or symbolic or both.
    
@@ -37,17 +39,19 @@ Note that we can drop the first universal quantifiers :)
 
 (a) ∀x∃y∀z(R(x,y) ∧ R(x,z) ∧ R(y,z)) - For all cases of x there is some y such that for all cases of z it is the case that all instances of x Rs some instance of y and all instances of x Rs all instances of z and some y Rs all instances z
  
-
+∃R.(∀R.T)⊓∀R.T
 
 (b) ∃x∀y∃z(R(x,y) ∧ R(x,z) ∧ R(y,z)) - There is some x such that for all y there is some z such that it is the case that some instance of x Rs all instances of y and x Rs some instance of z and all instances of y Rs some z
 
-
+∃R-.(∃R.(∃R-.T))
 
 (c) ∀y(R(x, y) → ∃x(R(y, x) ∧ ∀y(R(x, y) → A(y)))) - For all y if there is some x thats Rs all instances of y then there is some x such that all instances of y Rs some x and for all y if x Rs y then y As
 
+∀R.∃R.∀R.A
 
 (d) (∀y)(R(x, y) → A(y)) ∧ (∃y)(R(x, y) ∧ B(y)) - For all y if x Rs y then y As and some instances of y x Rs y and y Bs
 
+(∀R.A)⊓(∃R.B)
 
 4. Provide an interpretation I1 for ALC and an interpretation I2 for ALCN - each distinct from any interpretation covered in class so far - and construct a bisimulation that demonstrates ALCN is more expressive than ALC. Use the mermaid syntax of markdown to provide a graphical representation of your work. Feel free to use the mermaid live editor when diagramming.
 
