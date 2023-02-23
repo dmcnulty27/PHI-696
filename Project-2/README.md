@@ -49,11 +49,11 @@ is there a way to connect the x to the z -- can you have more then two variables
 
 (c) ∀y(R(x, y) → ∃x(R(y, x) ∧ ∀y(R(x, y) → A(y)))) - For all y if there is some x thats Rs all instances of y then there is some x such that all instances of y Rs some x and for all y if x Rs y then y As
 
-Is this well-formed?
+Is this well-formed? I think not. For it to be well formed it should look closer to  ((∀y∃x(R(x, y) → R(y, x)) ∧ (R(x, y) → A(y)))
 
 (d) (∀y)(R(x, y) → A(y)) ∧ (∃y)(R(x, y) ∧ B(y)) - For all y if x Rs y then y As and some instances of y x Rs y and y Bs
 
-Is this well-formed?
+Is this well-formed? I think not. For it to be well-fromed there should be another set of parenthesis to make it a conjunction
 
 4. Provide an interpretation I1 for ALC and an interpretation I2 for ALCN - each distinct from any interpretation covered in class so far - and construct a bisimulation that demonstrates ALCN is more expressive than ALC. Use the mermaid syntax of markdown to provide a graphical representation of your work. Feel free to use the mermaid live editor when diagramming.
 
