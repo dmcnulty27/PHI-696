@@ -110,7 +110,7 @@ Answer to 8.
   
   (b) a overlaps c
   
-  (c) a is part of b, b is part of f, and a is part of f
+  (c) a is part of b, b is part of f, and a is part of f 
   
   (e) There are no parts between a and g in common
   
