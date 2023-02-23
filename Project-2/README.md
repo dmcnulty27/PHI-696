@@ -28,6 +28,8 @@ Tip #4: Work together _as a team_.
   (e)  D ≡ ¬O 
   
 2. Use your axioms from question 1 as the basis of an ALCI T-Box. Supplement this T-box with whatever other axioms you like, as well as an A-box, so that you ultimately construct a knowledge base K = (T,A). Provide a model of K. This may be graphical or symbolic or both.
+
+
    
 Knowledge Base = 
 
@@ -40,12 +42,10 @@ Note that we can drop the first universal quantifiers :)
 (a) ∀x∃y∀z(R(x,y) ∧ R(x,z) ∧ R(y,z)) - For all cases of x there is some y such that for all cases of z it is the case that all instances of x Rs some instance of y and all instances of x Rs all instances of z and some y Rs all instances z
  
 ∃R.(∀R.T)⊓∀R.T
-is there a way to connect the x to the z -- can you have more then two variables?
 
 (b) ∃x∀y∃z(R(x,y) ∧ R(x,z) ∧ R(y,z)) - There is some x such that for all y there is some z such that it is the case that some instance of x Rs all instances of y and x Rs some instance of z and all instances of y Rs some z
 
 ∃R-.(∃R.(∃R-.T))
-
 
 (c) ∀y(R(x, y) → ∃x(R(y, x) ∧ ∀y(R(x, y) → A(y)))) - For all y if there is some x thats Rs all instances of y then there is some x such that all instances of y Rs some x and for all y if x Rs y then y As
 
@@ -101,6 +101,9 @@ Answer to 8.
 
 9. Open the Protege editor and create object properties for each of the role names that you constructed in question 1. You should have at least 6 object properties. Assert in the editor that P is a sub-property of O, that P is transitive, and that O is symmetric. Next, add individuals - a, b, c - to the file and assert that c is part of a and that c overlaps b. Running the reasoner should reveal - highlighted in yellow if you select the individual c - that c overlaps a. Using the discussion in the selections from chapter 4 of the Baader, et. al. text as a guide, explain how the tableau algorithm is generating this inference. Also, provide a screenshot of the results of your reasoner run with c highlighted.
 
+![Protege](https://user-images.githubusercontent.com/123985147/221044462-590df2a7-230f-438d-863d-0da5b661fbeb.png)
+
+
 10. Following up on your work in question 9, adjust/add/remove/etc. object properties and individuals in your Protege file so that when you run a reasoner in Protege, you return the following consequences:
 
   (a) a is a proper part of b and disjoint from e
@@ -112,3 +115,5 @@ Answer to 8.
   (e) There are no parts between a and g in common
   
 Provide a screenshot of your results here.
+
+![PROTEGE2](https://user-images.githubusercontent.com/123985147/221046071-9b2c21be-4508-47d3-813b-93b5838a0414.png)
