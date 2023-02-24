@@ -109,7 +109,7 @@ Note that we can drop the first universal quantifiers :)
 
 (c) ∀y(R(x, y) → ∃x(R(y, x) ∧ ∀y(R(x, y) → A(y)))) - For all y if there is some x thats Rs all instances of y then there is some x such that all instances of y Rs some x and for all y if x Rs y then y As
 
-Is this well-formed? I think not. For it to be well-fromed there should be another set of parenthesis to make it a conjunction additionally there is an unbound x
+Is this well-formed? I think not. There is an unbound x
 
 (d) (∀y)(R(x, y) → A(y)) ∧ (∃y)(R(x, y) ∧ B(y)) - For all y if x Rs y then y As and some instances of y x Rs y and y Bs
 
