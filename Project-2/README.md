@@ -29,9 +29,78 @@ Tip #4: Work together _as a team_.
   
 2. Use your axioms from question 1 as the basis of an ALCI T-Box. Supplement this T-box with whatever other axioms you like, as well as an A-box, so that you ultimately construct a knowledge base K = (T,A). Provide a model of K. This may be graphical or symbolic or both.
 
+TBox:{
+PP ⊑ P 
 
-   
-Knowledge Base = 
+P ⊑ O 
+
+O ⊑ O¯
+
+O¯ ⊑ O
+
+D ⊑ ¬O}
+
+ABox:{
+
+(Utah, USA):P,
+
+(Bryce Canyon, Utah):PP, 
+
+(Bryce Canyon, USA):PP, 
+
+(USA, Utah):iPP, 
+
+(Utah, USA):O, 
+
+(Oregon, Utah):D,
+
+}
+
+
+ΔI = {Bryce Canyon, Utah, Oregon, USA}
+
+Named Individuals:
+
+Bryce Canyon = NP
+
+Utah = U
+
+USA = A
+
+Oregon = O
+
+
+Concept Assignments:
+
+State={U, O}
+
+Place={NP}
+
+Country={A}
+
+Role Assignments:
+P (Part_of) = {(NP, U), (U,A), (O,A), (U,U), (O,O), (A,A)
+
+PP (ProperPart_of) = {(NP,U), (NP,A), (U,A), (O,A)}
+
+iP (inverse Part_of) = {(U,NP), (A,U), (A,O), (A,NP)}
+
+iPP (inverse ProperPart_of) = {(U,NP), (A,NP), (A,U), (A,O)}
+
+O (overlaps) = {(NP,U), (NP,A), (U,A), (O,A), (NP, NP), (U,U), (A,A), (O,O)}
+
+D (disjoint) = {(O,U), (NP, O)}
+
+
+![Protege2a](https://user-images.githubusercontent.com/123985147/221180906-722d91a8-0186-4906-83d5-af76193f531f.png)
+
+
+As a Bonus here is my favorite picture I've taken at Bryce Canyon, it is at Sunrise (My favorite National Park in Utah). As well as my favorite picture I've taken in Oregon at Crater Lake (The only National Park in Oregon) simply becuase I miss the West. 
+
+![Bryce Canyon Sunrise](https://user-images.githubusercontent.com/123985147/221182562-89053251-07f0-4fa1-a50f-29f9cf168bad.jpg)
+
+![Crater Lake Wizard Island](https://user-images.githubusercontent.com/123985147/221182582-a440f7bb-c20a-4de5-b50e-8c33abafdac5.jpg)
+
 
 3. Translate the following first-order logic axioms into ALCI:
 
@@ -49,11 +118,11 @@ Note that we can drop the first universal quantifiers :)
 
 (c) ∀y(R(x, y) → ∃x(R(y, x) ∧ ∀y(R(x, y) → A(y)))) - For all y if there is some x thats Rs all instances of y then there is some x such that all instances of y Rs some x and for all y if x Rs y then y As
 
-Is this well-formed? I think not. For it to be well formed it should look closer to  ((∀y∃x(R(x, y) → R(y, x)) ∧ (R(x, y) → A(y)))
+Is this well-formed? I think not. For it to be well-fromed there should be another set of parenthesis to make it a conjunction additionally there is an unbound x
 
 (d) (∀y)(R(x, y) → A(y)) ∧ (∃y)(R(x, y) ∧ B(y)) - For all y if x Rs y then y As and some instances of y x Rs y and y Bs
 
-Is this well-formed? I think not. For it to be well-fromed there should be another set of parenthesis to make it a conjunction
+Is this well-formed? I think not. There is an unbound x!
 
 4. Provide an interpretation I1 for ALC and an interpretation I2 for ALCN - each distinct from any interpretation covered in class so far - and construct a bisimulation that demonstrates ALCN is more expressive than ALC. Use the mermaid syntax of markdown to provide a graphical representation of your work. Feel free to use the mermaid live editor when diagramming.
 
