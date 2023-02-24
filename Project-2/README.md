@@ -150,7 +150,7 @@ So B is bisimilar to B2. By defining the role t as ≥2 ∃t.⊤ in I1 ≥1 ∃t
 
 5. Provide an interpretation I1 for ALC and an interpretation I2 for ALCN - each distinct from any interpretation covered in class so far - and construct a bisimulation that does not demonstrate ALCN is more expressive than ALC. Use the mermaid syntax of markdown to provide a graphical representation of your work. Feel free to use the mermaid live editor when diagramming.
 
-![Protege4](https://user-images.githubusercontent.com/123985147/221068637-1f5ac1ce-5705-4e59-a367-b91eef48eb58.png)
+![Protegestuff](https://user-images.githubusercontent.com/123985147/221281070-59576dac-6df4-4b28-b250-3ec77d46630b.png)
 
 Named IndividualsI: 
 DelaneyI=D
