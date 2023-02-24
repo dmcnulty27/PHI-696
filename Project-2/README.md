@@ -69,15 +69,6 @@ USA = A
 
 Oregon = O
 
-
-Concept Assignments:
-
-State={U, O}
-
-Place={NP}
-
-Country={A}
-
 Role Assignments:
 P (Part_of) = {(NP, U), (U,A), (O,A), (U,U), (O,O), (A,A)
 
@@ -140,7 +131,7 @@ Named IndividualsI:
 DelaneyI = D
 PerciI = Perci 
 MoiraI = Moira 
-TheiaI = Theia
+
 
 Role Assignments: t = {(D, Perci), (D, Moira), (B, Theia)}
 
@@ -198,21 +189,21 @@ So B is bisimilar to B2. But we can distinguish them in ALCN by defining the rol
 
 (b) ∃r-.C and ∀r-.C
 
-(b) Corresponds to some instance of C that are related to all instances
+(b) The first refers to all individuals which have some instance C as a r-predecessor.
 
-(b) Corresponds to only instances of C that are related to all instances
+(b) The second refers to all individuals which have only instances of C as r-predecessors
 
 (c) <=nr and <=nr.C
 
-(c) Corresponds to restrictions that r is related to no more than n instances
+(c) The first one refers to all individuals which have no more than n r-fillers.
 
-(c) Corresponds to restrictions that r is realted to no more than n instances that relates to C
+(c) Corresponds to restrictions that r is realted to no more than n instances of C
 
 (d) ∃r-.C and ∃r-.{a} 
 
-(d) Corresponds to some instance of C that are related to all instances
+(d) The first one should mean all individuals which has some instance of C as r-predecesso
 
-(d) Corresponds to some instance of C that are related to the instance mapped to by the name a
+(d) The second one refers to all individuals which have some r-predecessor which is just a.
 
 7. There is a delightfully helpful subreddit called "ELI5" which stands for something like "explain it like I'm 5" where users post conceptually challenging questions and other users attempt to provide explanations in simple, jargon-free, terms that presumably a 5 year-old could understand. Using this as a model, explain the finite model property. Be sure to provide a simple example and explain when the property might be important, and when it is not so important.
 
