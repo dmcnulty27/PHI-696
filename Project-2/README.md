@@ -121,9 +121,6 @@ Is this well-formed? I think not. There is an unbound x!
 
 D=Delaney
 
-D ⊓ ∃R.T (ALC interpretation cannot distinguish between numbers of successors)
-
-D ⊓ ≥ 2R.T(ALCN Interpretation) P ⊓ ≥ 3R.T(ALCN Interpretation)
 
 ΔI1 = {Delaney, Perci, Moia, Theia}
 
@@ -147,9 +144,9 @@ Role Assignments: t2 = {(D2, Perci2), (D, Moira2)}
 
 Bisimulation:
 
-ρ = {(D, D2), (Perci, Perci2), (Moira, Moira2)}
+ρ = {(D, D2), (Perci, Perci2), (Moira, Moira2), (Theia,Moira2)}
 
-So B is bisimilar to B2. But we can distinguish them in ALCN by defining the role t as ≥2 ∃t.⊤ in I1 ≥1 ∃t2.⊤ in I2
+So B is bisimilar to B2. By defining the role t as ≥2 ∃t.⊤ in I1 ≥1 ∃t2.⊤ in I2" -- You should intead say, "I1 there is an element with 3 successors but in I2 there is an element with 2 elements
 
 5. Provide an interpretation I1 for ALC and an interpretation I2 for ALCN - each distinct from any interpretation covered in class so far - and construct a bisimulation that does not demonstrate ALCN is more expressive than ALC. Use the mermaid syntax of markdown to provide a graphical representation of your work. Feel free to use the mermaid live editor when diagramming.
 
@@ -159,9 +156,9 @@ Named IndividualsI:
 DelaneyI=D
 PerciI=Perci
 MoiraI=Moira 
-TheiaI=Theia
 
-Role Assignments t={(D, Perci), (D,Moira), (D, Theia)}
+
+Role Assignments t={(D, Perci), (D,Moira)}
 
 ΔI2= {Delaney, Perci, Moira}
 
@@ -176,7 +173,7 @@ Bisimulation:
 
 ρ = {(D, D2), (Moira, Moira2), (Perci, Perci2)}
 
-So B is bisimilar to B2. But we can distinguish them in ALCN by defining the role m as ≥2 ∃t.⊤ in I1 ≥1 ∃t2.⊤ in I2
+So B is bisimilar to B2. But we cannot distinguish formula X in ALC and ALCN
 
 6. Explain the difference - using natural language - between the description logic expressions:
 
@@ -202,7 +199,7 @@ So B is bisimilar to B2. But we can distinguish them in ALCN by defining the rol
 
 (d) ∃r-.C and ∃r-.{a} 
 
-(d) The first one should mean all individuals which has some instance of C as r-predecesso
+(d) The first one should mean all instances which has some instance of C as r-predecessor
 
 (d) The second one refers to all individuals which have some r-predecessor which is just a.
 
