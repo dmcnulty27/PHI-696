@@ -125,12 +125,13 @@ D ⊓ ∃R.T (ALC interpretation cannot distinguish between numbers of successor
 
 D ⊓ ≥ 2R.T(ALCN Interpretation) P ⊓ ≥ 3R.T(ALCN Interpretation)
 
-ΔI1 = {Delaney, Perci, Moia, Thia}
+ΔI1 = {Delaney, Perci, Moia, Theia}
 
 Named IndividualsI: 
 DelaneyI = D
 PerciI = Perci 
-MoiraI = Moira 
+MoiraI = Moira
+TheiaI = Theia
 
 
 Role Assignments: t = {(D, Perci), (D, Moira), (B, Theia)}
