@@ -57,11 +57,65 @@ Is this well-formed? I think not. For it to be well-fromed there should be anoth
 
 4. Provide an interpretation I1 for ALC and an interpretation I2 for ALCN - each distinct from any interpretation covered in class so far - and construct a bisimulation that demonstrates ALCN is more expressive than ALC. Use the mermaid syntax of markdown to provide a graphical representation of your work. Feel free to use the mermaid live editor when diagramming.
 
+![Protege5](https://user-images.githubusercontent.com/123985147/221069424-1023a268-b07b-42b1-8a29-61ba9ae02ccf.png)
 
+D=Delaney
+
+D ⊓ ∃R.T (ALC interpretation cannot distinguish between numbers of successors)
+
+D ⊓ ≥ 2R.T(ALCN Interpretation) P ⊓ ≥ 3R.T(ALCN Interpretation)
+
+ΔI1 = {Delaney, Perci, Moia, Thia}
+
+Named IndividualsI: 
+DelaneyI = D
+PerciI = Perci 
+MoiraI = Moira 
+TheiaI = Theia
+
+Role Assignments: t = {(D, Perci), (D, Moira), (B, Theia)}
+
+ΔI2 = {Delaney, Perci, Moira}
+
+Named IndividualsI: 
+DelaneyI2 = D2 
+PerciI2 = Perci2 
+MoiraI2 = Moira2
+
+Role Assignments: t2 = {(D2, Perci2), (D, Moira2)}
+
+Bisimulation:
+
+ρ = {(D, D2), (Perci, Perci2), (Moira, Moira2)}
+
+So B is bisimilar to B2. But we can distinguish them in ALCN by defining the role t as ≥2 ∃t.⊤ in I1 ≥1 ∃t2.⊤ in I2
 
 5. Provide an interpretation I1 for ALC and an interpretation I2 for ALCN - each distinct from any interpretation covered in class so far - and construct a bisimulation that does not demonstrate ALCN is more expressive than ALC. Use the mermaid syntax of markdown to provide a graphical representation of your work. Feel free to use the mermaid live editor when diagramming.
 
+![Protege4](https://user-images.githubusercontent.com/123985147/221068637-1f5ac1ce-5705-4e59-a367-b91eef48eb58.png)
 
+Named IndividualsI: 
+DelaneyI=D
+PerciI=Perci
+MoiraI=Moira 
+TheiaI=Theia
+
+Role Assignments t={(D, Perci), (D,Moira), (D, Theia)}
+
+ΔI2= {Delaney, Perci, Moira}
+
+Named IndividualsI: 
+DelaneyI2=D2
+PerciI2=Perci2
+MoiraI2=Moira2
+
+Role Assignments: t2 ={(D2,Percival), (D2, Moira Lee)}
+
+Bisimulation:
+
+ρ = {(D, D2), (Moira, Moira2), (Perci, Perci2)}
+
+So B is bisimilar to B2. But we can distinguish them in ALCN by defining the role m as ≥2 ∃t.⊤ in I1 ≥1 ∃t2.⊤ in I2
 
 6. Explain the difference - using natural language - between the description logic expressions:
 
@@ -93,11 +147,15 @@ Is this well-formed? I think not. For it to be well-fromed there should be anoth
 
 7. There is a delightfully helpful subreddit called "ELI5" which stands for something like "explain it like I'm 5" where users post conceptually challenging questions and other users attempt to provide explanations in simple, jargon-free, terms that presumably a 5 year-old could understand. Using this as a model, explain the finite model property. Be sure to provide a simple example and explain when the property might be important, and when it is not so important.
 
-Answer to 7. First to define some terms, Attributive (Concept) Language with Complements is what ALC stands for -- a concept is an idea or general notion. A TBox is a set of included statements that relate to some thing, which provides a limitation for that statement. Finite means it has limits and infinite means to be limitless.  A finite model property in ALC is what makes a model, which cannot be forced to have limits (or be finite), unable to be limitless (or infinite). This is to say, a concept model will have the finite model property if the concept is able to be modeled with a TBox as the TBox allows us to determine and define the size of the finite model. This is possible because not only can we define specific concepts in a TBox but we can also define the concepts that support that concept, we call these subconcepts. Consider the concept of the color green, green also contains the subconcepts of the colors blue and yellow. This is because the mixture of blue and yellow creates the color green -- this is to say, the concept green in supported by subconcepts green and yellow. Following the model a TBox for the one concept green would include the subconcepts blue and yellow adn by conrast would not include the color red, purple, or black. 
+Answer to 7. Consider a puzzle. A puzzle has a finite number of pieces and can be solved in a finite number of moves. This is to say a finite model property describes something that is true in a system and can be proven to be true within a finite number of moves, with a finite number of pieces. Importance? The finite model property is useful in that it creates a domain (edge pieces) around a concept (the whole puzzle) so that there are not infite numbers of possible pieces to the concept or puzzle. Unimportance? If we are talking about infite possibilties it is not useful to have a strict domain as the domain is never-ending in such a case, imagine a puzzle that continues to generate a new piece everytime one is put into place
+
+![puzzles](https://user-images.githubusercontent.com/123985147/221069880-c9c63073-958e-4b3f-b024-d4a33a0cb7b1.jpg)
 
 8. Following up on the preceding , explain the tree model property. Be sure to provide a simple example and explain when the property might be important, and when it is not so important.
 
-Answer to 8. 
+Answer to 8. It is like playing Guess Who? such that we start with knowing one descriptor of the person pictured (the root). Depending on the how you guess and question the Guess Who? board will start to show patterns into different (or branches) possibilties. If you guess males you go through one pattern if you guess females you go through another pattern and if you guess gender non-conforming you will be lead down yet another pattern. Once you guess the right person (the leaf) you have reached the end of the model. Importance? The important aspect of this model is that you can see the different possible pattern the game takes and how each guess or question gets you closer to the answer! Unimportance? If you know who to guess there is no reason to go through the garden of forking paths.
+
+![guess-who-board-game-hand](https://user-images.githubusercontent.com/123985147/221070772-8118287d-9ed2-44b0-a4d0-d8b6f6fa4f80.png)
 
 9. Open the Protege editor and create object properties for each of the role names that you constructed in question 1. You should have at least 6 object properties. Assert in the editor that P is a sub-property of O, that P is transitive, and that O is symmetric. Next, add individuals - a, b, c - to the file and assert that c is part of a and that c overlaps b. Running the reasoner should reveal - highlighted in yellow if you select the individual c - that c overlaps a. Using the discussion in the selections from chapter 4 of the Baader, et. al. text as a guide, explain how the tableau algorithm is generating this inference. Also, provide a screenshot of the results of your reasoner run with c highlighted.
 
