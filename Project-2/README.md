@@ -241,4 +241,6 @@ Answer to 8. It is like playing Guess Who? such that we start with knowing one d
   
 Provide a screenshot of your results here.
 
+As it states post a screen shot I will only one post a screenshot :)
+
 ![PROTEGE2](https://user-images.githubusercontent.com/123985147/221046071-9b2c21be-4508-47d3-813b-93b5838a0414.png)
