@@ -187,13 +187,13 @@ So B is bisimilar to B2. But we cannot distinguish formula X in ALC and ALCN
 
 (b) ∃r-.C and ∀r-.C
 
-(b) The first refers to all individuals which have some instance C as a r-predecessor.
+(b) The first refers to all instances which have some instance C as a r-predecessor.
 
-(b) The second refers to all individuals which have only instances of C as r-predecessors
+(b) The second refers to all instances which have only instances of C as r-predecessors
 
 (c) <=nr and <=nr.C
 
-(c) The first one refers to all individuals which have no more than n r-fillers.
+(c) The first one refers to all instances which have no more than n r-fillers.
 
 (c) Corresponds to restrictions that r is realted to no more than n instances of C
 
@@ -201,17 +201,17 @@ So B is bisimilar to B2. But we cannot distinguish formula X in ALC and ALCN
 
 (d) The first one should mean all instances which has some instance of C as r-predecessor
 
-(d) The second one refers to all individuals which have some r-predecessor which is just a.
+(d) The second one refers to all instances which have some r-predecessor which is just a.
 
 7. There is a delightfully helpful subreddit called "ELI5" which stands for something like "explain it like I'm 5" where users post conceptually challenging questions and other users attempt to provide explanations in simple, jargon-free, terms that presumably a 5 year-old could understand. Using this as a model, explain the finite model property. Be sure to provide a simple example and explain when the property might be important, and when it is not so important.
 
-Answer to 7. Consider a puzzle. A puzzle has a finite number of pieces and can be solved in a finite number of moves. This is to say a finite model property describes something that is true in a system and can be proven to be true within a finite number of moves, with a finite number of pieces. Importance? The finite model property is useful in that it creates a domain (edge pieces) around a concept (the whole puzzle) so that there are not infite numbers of possible pieces to the concept or puzzle. Unimportance? If we are talking about infite possibilties it is not useful to have a strict domain as the domain is never-ending in such a case, imagine a puzzle that continues to generate a new piece everytime one is put into place
+Answer to 7. Consider a puzzle. A puzzle has a finite number of pieces and can be solved in a finite number of moves. This is to say a finite model property describes something that is true in a system and can be proven to be true within a finite number of moves, with a finite number of pieces. Importance? The finite model property is useful in that it creates a domain (edge pieces) around a concept (the whole puzzle) so that there are not infite numbers of possible pieces to the concept or puzzle. Unimportance? If we are talking about infite possibilties it is not useful to have a strict domain as the domain is never-ending in such a case, imagine a puzzle that continues to generate a new piece everytime one is put into place. This is to say a Finite model property can be used to design a procedure used for solving a problem or performing a computation for its satisfiable concepts.
 
 ![puzzles](https://user-images.githubusercontent.com/123985147/221069880-c9c63073-958e-4b3f-b024-d4a33a0cb7b1.jpg)
 
 8. Following up on the preceding , explain the tree model property. Be sure to provide a simple example and explain when the property might be important, and when it is not so important.
 
-Answer to 8. It is like playing Guess Who? such that we start with knowing one descriptor of the person pictured (the root). Depending on the how you guess and question the Guess Who? board will start to show patterns into different (or branches) possibilties. If you guess males you go through one pattern if you guess females you go through another pattern and if you guess gender non-conforming you will be lead down yet another pattern. Once you guess the right person (the leaf) you have reached the end of the model. Importance? The important aspect of this model is that you can see the different possible pattern the game takes and how each guess or question gets you closer to the answer! Unimportance? If you know who to guess there is no reason to go through the garden of forking paths.
+Answer to 8. It is like playing Guess Who? such that we start with knowing one descriptor of the person pictured (the root). Depending on the how you guess and question the Guess Who? board will start to show patterns into different (or branches) possibilties. If you guess males you go through one pattern if you guess females you go through another pattern and if you guess gender non-conforming you will be lead down yet another pattern. Once you guess the right person (the leaf) you have reached the end of the model. Importance? The important aspect of this model is that you can see the different possible pattern the game takes and how each guess or question gets you closer to the answer! Unimportance? If you know who to guess there is no reason to go through the garden of forking paths. You can use a tree model property to check for and adhere to consistencies is a visual anaylsis platform.
 
 ![guess-who-board-game-hand](https://user-images.githubusercontent.com/123985147/221070772-8118287d-9ed2-44b0-a4d0-d8b6f6fa4f80.png)
 
