@@ -106,19 +106,23 @@ Note that we can drop the first universal quantifiers :)
 
 (a) ∀x∃y∀z(R(x,y) ∧ R(x,z) ∧ R(y,z)) - For all cases of x there is some y such that for all cases of z it is the case that all instances of x Rs some instance of y and all instances of x Rs all instances of z and some y Rs all instances z
  
-∃R.(∀R.T)⊓∀R.T
+∃R.(∀R.T)⊓∃R.T
 
 (b) ∃x∀y∃z(R(x,y) ∧ R(x,z) ∧ R(y,z)) - There is some x such that for all y there is some z such that it is the case that some instance of x Rs all instances of y and x Rs some instance of z and all instances of y Rs some z
 
 ∃R-.(∃R.(∃R-.T))
 
+∃R-.∃R¯(∃R).∃R(T)
+
 (c) ∀y(R(x, y) → ∃x(R(y, x) ∧ ∀y(R(x, y) → A(y)))) - For all y if there is some x thats Rs all instances of y then there is some x such that all instances of y Rs some x and for all y if x Rs y then y As
 
-Is this well-formed? I think not. There is an unbound x
+Is this well-formed? I think not. If the implicit universal is there then why would we introduce the extistential x....
 
 (d) (∀y)(R(x, y) → A(y)) ∧ (∃y)(R(x, y) ∧ B(y)) - For all y if x Rs y then y As and some instances of y x Rs y and y Bs
 
-Is this well-formed? I think not. There is an unbound x!
+I am not sure about this but assuming the implicit universal x....
+
+ (∀R.A) ⊓ (∃R.B)
 
 4. Provide an interpretation I1 for ALC and an interpretation I2 for ALCN - each distinct from any interpretation covered in class so far - and construct a bisimulation that demonstrates ALCN is more expressive than ALC. Use the mermaid syntax of markdown to provide a graphical representation of your work. Feel free to use the mermaid live editor when diagramming.
 
