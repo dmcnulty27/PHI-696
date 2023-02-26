@@ -228,6 +228,7 @@ Answer to 8. It is like playing Guess Who? such that we start with knowing one d
 
 ![Protege](https://user-images.githubusercontent.com/123985147/221044462-590df2a7-230f-438d-863d-0da5b661fbeb.png)
 
+Answer to second part of 9. It is my understanding that Tableau works from the knowledge base (Tbox + ABox) which we build out when we create things like class, individuals, and object properties and the ilk. By asserting things we build a something similiar to a tree model such that when the reasoner runs it considers possible interpretations and extends interpretations based off the assertations already put in place. The reasoner will notice the logical relations like if you assume disjoint (e,a) and thus the reasoner will infer disjoint (a,e) it happens like this because we assert the disjoint is symmetric and the reason will pull out the second disjoint from the first.
 
 10. Following up on your work in question 9, adjust/add/remove/etc. object properties and individuals in your Protege file so that when you run a reasoner in Protege, you return the following consequences:
 
