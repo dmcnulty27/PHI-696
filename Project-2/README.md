@@ -120,7 +120,7 @@ Is this well-formed? I think not. If the implicit universal is there then why wo
 
 (d) (∀y)(R(x, y) → A(y)) ∧ (∃y)(R(x, y) ∧ B(y)) - For all y if x Rs y then y As and some instances of y x Rs y and y Bs
 
-I am not sure about this but assuming the implicit universal x....
+I am not sure about this because it feels like 3 variables might be hard to note but assuming the implicit universal x....
 
  (∀R.A) ⊓ (∃R.B)
 
