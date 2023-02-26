@@ -39,6 +39,8 @@ PP ⊑ P
 
 P ⊑ O 
 
+iPP ⊑ iP
+
 O ⊑ O¯
 
 O¯ ⊑ O
@@ -74,12 +76,17 @@ USA = A
 
 Oregon = O
 
+Concept Assignments: 
+Bryce Canyon = {NP}, 
+State = {U, O}, 
+Country = {A}
+
 Role Assignments:
-P (Part_of) = {(NP, U), (U,A), (O,A), (U,U), (O,O), (A,A)
+P (Part_of) = {(NP, U), (NP,A), (U,A), (O,A), (U,U), (O,O), (A,A)}
 
 PP (ProperPart_of) = {(NP,U), (NP,A), (U,A), (O,A)}
 
-iP (inverse Part_of) = {(U,NP), (A,U), (A,O), (A,NP)}
+iP (inverse Part_of) = {(U,NP), (A,U), (A,O), (A,NP), (U,U), (O,O), (A,A)}
 
 iPP (inverse ProperPart_of) = {(U,NP), (A,NP), (A,U), (A,O)}
 
