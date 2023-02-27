@@ -13,25 +13,35 @@ Tip #4: Work together _as a team_.
 ⊔ ⊓ ⊧ ⊭ ⊦ ⊬ ⊏ ⊐ ⊑ ⊒ C ¬ ≡ ≠ ≥ ≤ ∃ ∀
 
   (a)  PP that says that x is a part of y and the inverse (y is a part of x) is not true 
+  
   (a)  I am not sure is this is doable because you cannot make an identity claim 
+  
   (a)  PP ≡ P ⊓ ¬P- 
   
 
   (b) iPP that says that it is not the case the x is a part of y and the inverse (y is a part of x) is true
+  
   (b) I am not sure is this is doable because you cannot make an identity claim
+  
   (b) iPP ≡ ¬P ⊓ P-
 
   
   (c) iP that says x iP y means that y is a part of x
+  
   (c) iP ≡ ∀part_of-.C
+  
   (c) iP ≡ P-
    
   (d)  O that says that x overlaps y -- x is a whole including such a thing that it is a part of another thing y, so x and y has the same part
+  
   (d)  I am not sure if you can do this becuase you cannot make an identity claim. This is a psapaital relation not sure how to manage that gap. It could be that they share a part? You would need 3 parts and that does not seem plausible. 
+  
   (d)  O ≡ ∃P-.(∃P)
   
   (e)  D that says that x and y are disjoint --x has no part of y and y has no part of x
+  
   (e)  I am not sure if you can do this becuase you cannot make an indentity claim 
+  
   (e)  D ≡ ¬O 
   
 2. Use your axioms from question 1 as the basis of an ALCI T-Box. Supplement this T-box with whatever other axioms you like, as well as an A-box, so that you ultimately construct a knowledge base K = (T,A). Provide a model of K. This may be graphical or symbolic or both.
