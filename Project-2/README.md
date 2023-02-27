@@ -16,9 +16,11 @@ Tip #4: Work together _as a team_.
   (a)  I am not sure is this is doable because you cannot make an identity claim 
   (a)  PP ≡ P ⊓ ¬P- 
   
+
   (b) iPP that says that it is not the case the x is a part of y and the inverse (y is a part of x) is true
   (b) I am not sure is this is doable because you cannot make an identity claim
   (b) iPP ≡ ¬P ⊓ P-
+
   
   (c) iP that says x iP y means that y is a part of x
   (c) iP ≡ ∀part_of-.C
@@ -197,6 +199,7 @@ So B is bisimilar to B2. But we cannot distinguish formula X in ALC and ALCN
 
 (a) ∃r.C and ∀r.C
 
+
 (a) Corresponds to all instances that relates to some instances of C
 
 (a) Corresponds to all instances that relates to only instances of C
@@ -227,9 +230,11 @@ Answer to 7. Consider a puzzle. A puzzle has a finite number of pieces and can b
 
 8. Following up on the preceding , explain the tree model property. Be sure to provide a simple example and explain when the property might be important, and when it is not so important.
 
+
 Answer to 8. It is like playing Guess Who? such that we start with knowing one descriptor of the person pictured (the root). Depending on the how you guess and question the Guess Who? board will start to show patterns into different (or branches) possibilties. If you guess males you go through one pattern if you guess females you go through another pattern and if you guess gender non-conforming you will be lead down yet another pattern. Once you guess the right person (the leaf) you have reached the end of the model. Importance? The important aspect of this model is that you can see the different possible pattern the game takes and how each guess or question gets you closer to the answer! Unimportance? If you know who to guess there is no reason to go through the garden of forking paths. You can use a tree model property to check for and adhere to consistencies is a visual anaylsis platform.
 
 ![guess-who-board-game-hand](https://user-images.githubusercontent.com/123985147/221070772-8118287d-9ed2-44b0-a4d0-d8b6f6fa4f80.png)
+
 
 9. Open the Protege editor and create object properties for each of the role names that you constructed in question 1. You should have at least 6 object properties. Assert in the editor that P is a sub-property of O, that P is transitive, and that O is symmetric. Next, add individuals - a, b, c - to the file and assert that c is part of a and that c overlaps b. Running the reasoner should reveal - highlighted in yellow if you select the individual c - that c overlaps a. Using the discussion in the selections from chapter 4 of the Baader, et. al. text as a guide, explain how the tableau algorithm is generating this inference. Also, provide a screenshot of the results of your reasoner run with c highlighted.
 
