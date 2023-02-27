@@ -91,7 +91,7 @@ Oregon = O
 Concept Assignments: 
 Bryce Canyon = {NP}, 
 State = {U, O}, 
-Country = {A}
+Country = {A} 
 
 Role Assignments:
 P (Part_of) = {(NP, U), (NP,A), (U,A), (O,A), (U,U), (O,O), (A,A)}
