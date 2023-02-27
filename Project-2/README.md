@@ -94,7 +94,7 @@ O (overlaps) = {(NP,U), (NP,A), (U,A), (O,A), (NP, NP), (U,U), (A,A), (O,O)}
 
 D (disjoint) = {(O,U), (NP, O)}
 
-
+Please note my model does not show all possible as described in the Knowledge Base
 ![Protege2a](https://user-images.githubusercontent.com/123985147/221180906-722d91a8-0186-4906-83d5-af76193f531f.png)
 
 
