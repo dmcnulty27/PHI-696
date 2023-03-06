@@ -83,7 +83,7 @@ A (x, t) = being an adult at t
 S (x, t) = being a senior at t
 
   (d) Goofus and Gallant have been married for three years; for each day of that span, it is true to assert they are married.
-  
+   
 ∀t(D(t) ∧ Y(t)→(M(g1,t) ∧ M(g2,t)))
 M(x, t) = being married at t
 Y(t) = belongs to 3 year span 1
