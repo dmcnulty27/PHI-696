@@ -35,27 +35,84 @@ For any question involving the use of Protege, please be sure to import Basic Fo
 
 3. Model the following natural language expressions using terms from BFO and RO; you are welcome to introduce new terms where needed:  
 ```
-  (a) Sally has an arm Tuesday but does not have an arm Wednesday. 
- Independent_continuents; Tuesday_Sally Wednesday_Sally Arm
- Object property: has_part 
- Tuesday_Sally has_part arm
- Wednesday_Sally -has_part arm
- Tuesday_Sally same_as Wednesday_Sally
-  
+ a) Sally has an arm Tuesday but does not have an arm Wednesday.
+  Sally is instance_of object
+Tuesday is instance_of one-dimensional temporal region 
+Wednesday is an instance of one-dimensional temporal region 
+Arm is an instance of fiat object part
+“Sally participates in having at least one arm on Tuesday” is an instance of occurrent 
+“Sally participates in having no arms on Wednesday” is an instance of occurrent
+“Sally participates in having at least one arm on Tuesday precedes Sally participates in having no arms on Wednesday”
+
   (b) Every liver has some cell as part at all times it exists.
+  Liver has_part_at_all_times Cell
+  
   (c) John was a child, then an adult, then a senior. 
+  John is an instance_of object
+childhood is an instance_of occurrent.
+adulthood is an instance_of occurrent.
+seniorhood is an instance_of occurrent.
+“John participates in childhood precedes John participates in adulthood which precedes John participates in seniorhood.”
+
   (d) Goofus and Gallant are married at each point in a three year span. 
+  Goofus is an instance_of object
+Gallant is an instance_of object
+Marriage is an instance_of occurent
+“Three years span 1” is an instance_of one-dimensional temporal region.
+If zero-dimensional temporal region t1 is part_of the one-dimensional temporal region “three years span 1”, then Goofus participates in marriage at t1 and Galland participates in marriage at t1.
 ```
 
 4. Using the language of First-Order Logic, represent the following natural language expressions; you are welcome to introduce new terms where needed: 
-```
-  (a) Sally has an arm Tuesday but does not have an arm Wednesday. 
+``(a) Sally has an arm Tuesday but does not have an arm Wednesday.
+  ∃(x)(Sx^(Tx^~Wx)) 
+  S=Is Sally 
+  T=Has an arm on Tuesday 
+  W=Has an arm on Wednesday
   (b) Every liver has some cell as part at all times it exists.
-  (c) John was a child, then an adult, then a senior. 
-  (d) Goofus and Gallant have been married for three years; for each day of that span, it is true to assert they are married. 
+  ∀(x)(Lx->∃(y)(Cy^Pyx))
+  L=Is a liver 
+  C=Is a cell 
+  P=_is a part of_
+  
+  (c) John was a child, then an adult, then a senior.
+∃t1∃t2∃t3 (C (j, t1) ∧ A (J, t2) ∧ S(J, t3) ∧ E (t1, t2) ∧ E (t1, t3))
+j = John
+E xy = being earlier than
+C (x, t) = being a child at t
+A (x, t) = being an adult at t
+S (x, t) = being a senior at t
+
+  (d) Goofus and Gallant have been married for three years; for each day of that span, it is true to assert they are married.
+  
+∀t(D(t) ∧ Y(t)→(M(g1,t) ∧ M(g2,t)))
+M(x, t) = being married at t
+Y(t) = belongs to 3 year span 1
+g1 = Goofus
+g2 = Gallant
+D(t) = t is a day
+
 ```
 
 5. Using BFO and RO, model the following scenario: the content of an rdf file is represented in two serializations - one in Turtle, one in XML - which are sent from one computer to two distinct computers on the same network.   
+
+Content is an instance_of generic dependent continuant
+File is an instance_of generic dependent continuant
+File 1 Turtle implements content 1
+File 2 XML implements content 1
+Files 1 and 2 are output of Computer 1
+Computer 1 is bearer of File 1 and File 2
+Computer 1 is an instance_of material entity
+Computer 1 sends output to Computers 2 and 3
+File 1 is input of Computer 2
+Computer 2 receives input from Computer 1
+Computer 2 is an instance_of material entity
+File 2 is input of Computer 3
+Computer 3 receives input from Computer 1
+Computer 3 is an instance_of material entity
+Computer 1 2 and 3 are part of Network 1
+Network 1 is an instance_of Network
+Network is_a object aggregate
+
 
 
 6. Using Protege, place these in the BFO hierarchy where you think they fit best:
