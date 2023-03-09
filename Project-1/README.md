@@ -184,7 +184,7 @@ I am not sure about this because it feels like 3 variables might be hard to note
 
 4. Provide an interpretation I1 for ALC and an interpretation I2 for ALCN - each distinct from any interpretation covered in class so far - and construct a bisimulation that demonstrates ALCN is more expressive than ALC. Use the mermaid syntax of markdown to provide a graphical representation of your work. Feel free to use the mermaid live editor when diagramming.
 
-![Protege5](https://user-images.githubusercontent.com/123985147/221069424-1023a268-b07b-42b1-8a29-61ba9ae02ccf.png)
+![Screenshot_20230224_113855](https://user-images.githubusercontent.com/123985147/224135558-cac6f27d-87e8-42d7-9810-f5507de3f04c.png)
 
 <<<<<<< dmcnulty27-patch-1
 D=Delaney
