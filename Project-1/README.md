@@ -1,308 +1,321 @@
-# Project 1 Assignment
-   
+# Project 2
+<<<<<<< dmcnulty27-patch-1
+ 
 Your first project will require you to answer each of the 10 questions below.  You will be expected to open a pull request with your initial answers by the second class meeting, giving you one week to work on these problems. You and your peers will then have one week to work together to refine your respective initial answers, so they are ready for final submission. Once your pull requests have been reviewed and merged to the development branch, I will review them, then merge to the master branch. 
+=======
 
-```Tip #1: Carefully study the Hedman selections assigned, as several of the questions are taken directly from the textbook. 
-Tip #2: Google is your friend. An important skill to pick up in this class is recognizing when to think hard and when to think smart. You might find answers to some of the questions below simply by googling; you might find pieces of answers to parts of some question below, which will need to be combined; then again, you might not find any help at all because the questions are more novel than they initially appear. I encourage you to use existing resources as guidance, but be careful. My reputation for asking students tricky questions is well-earned. 
-Tip #3: Work _together_ to solve these problems, even for initial submissions and when you do, document this in github. For example, you might feel like you nearly have answers to question 1, but would love another pair of eyes. You can then open a post in your local github account, and tag folks from class requesting they check out your work. 
-Tip #4: The work we do is challenging; that should be assumed. You are smart enough to be here; that should also be assumed. We have neither time nor space for shaming, but all of time and space for praising. Be cognizant of how your messages might be received, and err on the side of caution. It is hard to surmise intent from text alone. For my part, I treat text only communications the way modern musicals are written: Little subtext; emotions on the sleeve. 
+Your second project will require you to answer each of the 10 questions below.  You will be expected to open a pull request with your initial answers by the second class meeting, giving you one week to work on these problems. You and your peers will then have one week to work together to refine your respective initial answers, so they are ready for final submission. Once your pull requests have been reviewed and merged to the development branch, I will review them, then merge to the master branch. 
+>>>>>>> main
+
+```
+Tip #1: Carefully study the Baader, et. al. selections assigned on bisimulation; it is deceptively subtle, and quite powerful. 
+Tip #2: Google is still your friend. So is stackexchange...
+Tip #3: Work together to solve these problems, even for initial submissions and when you do, document this in github. 
+Tip #4: Work together as a team. 
 ```
 
-Note: The standard interpretation of the logical symbols - "∨", "∧", "→", "¬", "∀", "∃" - is assumed throughout. 
-
-1. Provide the truth tables for each of the following propositional logic formulas. State whether each is a tautology, a contradiction, or contingent:
-
-  ```(a) (¬A→B)∨((A∧¬C)→B) 
-  (b) (A→B)∧(A→¬B)
-  (c) (A→(B∨C))∨(C→¬A) 
-  (d) ((A→B)∧C)∨(A∧D) 
-
-A	B	C	((¬A → B) ∨ ((A ∧ ¬C) → B))
-F	F	F		  T
-F	F	T		  T
-F	T	F		  T
-F	T	T		  T
-T	F	F		  T
-T	F	T		  T
-T	T	F		  T
-T	T	T		  T
-(a) is a tautology.
-
- A	B	C	((A → (B ∨ C)) ∨ (C → ¬A))
-F	F	F	T
-F	F	T	T
-F	T	F	T
-F	T	T	T
-T	F	F	T
-T	F	T	T
-T	T	F	T
-T	T	T	T
- (c) is a tautology.	
- 
- A	B	C	((A → (B ∨ C)) ∨ (C → ¬A))
-F	F	F	T
-F	F	T	T
-F	T	F	T
-F	T	T	T
-T	F	F	T
-T	F	T	T
-T	T	F	T
-T	T	T	T
- (c) is a tautology.
- 
-   A	B	C	D	(((A → B) ∧ C) ∨ (A ∧ D))
-F	F	F	F	F
-F	F	F	T	F
-F	F	T	F	T
-F	F	T	T	T
-F	T	F	F	F
-F	T	F	T	F
-F	T	T	F	T
-F	T	T	T	T
-T	F	F	F	F
-T	F	F	T	T
-T	F	T	F	F
-T	F	T	T	T
-T	T	F	F	F
-T	T	F	T	T
-T	T	T	F	T
-T	T	T	T	T
-(d) is contignet.
-
-2. A _literal_ is an atomic formula or the negation of an atomic formula. We say a formula is in _conjunctive normal form_ (CNF) if it is the conjunction of the disjunction of literals. Find propositional logic formulas in CNF equivalent to each of the following:
-
-  ```(a) (A→B)→C
-  (b) (A→(B∨C))∨(C→¬A)
-  (c) (¬A∧¬B∧C)∨(¬A∧¬C)∨(B∧C)∨A 
-
-``` (a) (A ∨ C) ∧ (¬B ∨ C)
-(b) ¬A ∨ ¬B
-(c) (¬A∧¬B∧C)∨(¬A∧¬C)??
-used CNF calculator https://www.artima.com/cs/cnf.html & https://www.erpelstolz.at/gateway/formular-uk-zentral.html
-
-
-3. Let V be the vocabulary of first-order logic consisting of a binary relation P and a unary relation F. Interpret P(x,y) as “x is a parent of y” and F(x) as “x is female.” Where possible define the following formulas in this vocabulary; where not possible, explain why: 
-
-  ```(a)  B(x,y) that says that x is a brother of y
-  (b)  A(x,y) that says that x is an aunt of y
-  (c)  C(x,y) that says that x and y are cousins 
-  (d)  O(x) that says that x is an only child
-  (e)  T(x) that says that x has exactly two brothers 
-
-```(a) ∃x∃y∃z(P(z,y)∧P(z,x)∧¬Fx) - There is some x and some y and some z such that z is the parent of y and z is the parent x and x is not female
-(a) if x is a brother of y x cannot be Female
-(b) ∃w∃x∃y∃z(P(z,y)∧P(w,z)∧P(w,x)∧Fx) - There is some w and some x and some y and some z such that z is the parent of y and w is the parent of z and w is the parent of x and x is female
-(b) An aunt is the sister of your parent
-(c) ∃v∃w∃x∃y∃z(P(v,w)∧P(v,z)∧P(w,x)∧P(z,y)) - There is some v and some w and some x and some y and some z such that v is the parent of w and v is the parent of z and w is the parent of x and z is the parent of y
-(c) A cousin is a reltionship between two individuals whose parents are silbings 
-(d) ∃x∃y∀z(P(y,z)→z=x) - There is some x and some y such that for all z if y is the parent of z then z and x are identical 
-(d) An only child is an individual who has no silbings and despite the potential existence of half-sibling that individual was raised primarily in a household where they were the only child present
-(e) ∃v∃w∃x∃y∀z(P(v,x)∧P(v,w)∧¬Fw∧P(v,y)∧¬Fy∧∀z((P(v,z)∧¬Fz)→((z=x)∨(z=w)∨(z=y)))) - There is some v and some w and some x and some y such that for all z if v is the parent of x and v is the parent of w and w is not female and v is the parent of y and y is not female and for all instances of z v is a parent of z and z is not female ten z is identical with w or z is identical with w or z is identical with y
-(e) An individual x has exactly two brothers if they are the child of an individual who has exactly two male identifying children other then individual x. This would give rise to x having exactly brothers.
-
-4. Let V be a vocabulary of the attribute (concept) language with complements (ALC) consisting of a role name "parent_of" and a concept name "Male". Interpret parent_of as "x is a parent of y" and M as "x is male". Where possible define the following formulas in this vocabulary; where not possible, explain why: 
-  ```(a)  B that says that x is a brother of y
-  (b)  A that says that x is an aunt of y
-  (c)  C that says that x and y are cousins 
-  (d)  O that says that x is an only child
-  (e)  T that says that x has exactly two brothers 
-
-```(a) ΔI = x,y,z
-(a) parent_of = (z,x) (z,y)
-(a) Male = x
-(b) ΔI = w, x, y, z
-(b) praren_of = (w,x) (w,z) (z,y)
-(b) ¬Male = x
-(c) ΔI = v, w, x, y, z
-(c) parent_of = (v, w) (v,z) (w,x) (z,y)
-(d) Not possible in this language as saying x is an only child of y but would make everything else false.
-(e) Not possible in this laguage as you can say that x has two brothers but you can't say that x has exactly two brothers.  
-
-5. Select two formulas defined in ALC from question 4 to form the basis of a T-Box. Supplement this T-box with whatever other axioms you like, as well as an A-box, so that you ultimately construct a knowledge base K = (T,A). Provide a _model_ of K. This may be graphical or symbolic or both.
-
- TBox = {Brother ⊆ Male,		(TBox.1)
-	Aunt ⊆ ~Male}		(TBox.2)
-
-Donnie = {Frank: Brother ∩ Male		(Axiom.1)
-	Remi: Brother ∩ Male		(Axiom.2)
-	Mary: Aunt			(Axiom.3)
-	(Donnie, Frank): parent_of	(Axiom.4)
-	(Donnie, Remi): parent_of}		(Axiom.5)
-	
-ΔI = {w, x, y, z},
-William  = w
-Xaivar = x
-Eunice = y
-Zane = z
-Male = {w, x}
-Brother = {w, x}
-Aunt = {y}
-Parent_of = {(z,w), (z,x)}
-
-6. Explain the difference - using natural language - between the first-order prefixes:
- ```(a) ∃x∀y and ∀x∃y
-  (b) ∃x∀y∃z and ∀x∃y∀z 
-  (c) ∀x∃y∀z∃w and ∃x∀y∃z∀w
-
-```(a) ∃x∀y says something like there is some x such that for all y
-(a) ∀x∃y says for all x there is some y 
-(b) ∃x∀y∃z says there is some x such that for all y there is some z such that 
-(b) ∀x∃y∀z says for all x there is come y such that for all x
-(c) ∀x∃y∀z∃w says for all x there is some y such that for all z there is some w
-(c) ∃x∀y∃z∀w says there is some x such that for all y there exists some z such that for all w
-
-7. Show that the following sentences are not equivalent by exhibiting a graph that models one but not both of these sentences:
+1. Let V be a vocabulary of ALCI consisting of a role name "P". Interpret part_of as "x is a part of y". Using this role name, define the following formulas in this language:
+<<<<<<< dmcnulty27-patch-1
+=======
 ```
-∀x∃y∀z(R(x,y) ∧ R(x,z) ∧ R(y,z))
-∃x∀y∃z(R(x,y) ∧ R(x,z) ∧ R(y,z))
-
-```mermaid
-graph TD;
-0 --> 0;
-0 --> 1;
-1 --> 1; 
+  (a)  PP that says that x is a proper part of y
+  (b)  iPP that says that y is a proper part of x
+  (c)  iP that says that x has y as part 
+  (d)  O that says that x overlaps y
+  (e)  D that says that x and y are disjoint 
 ```
+>>>>>>> main
 
- Here is my diagram of the universe: [label](file:///Universe.pub)
-U: {0,1}
-R: {(0,0), (0,1), (1,1)} 
+⊔ ⊓ ⊧ ⊭ ⊦ ⊬ ⊏ ⊐ ⊑ ⊒ C ¬ ≡ ≠ ≥ ≤ ∃ ∀
 
-	
-8. Using an online tableau proof generator - such as the one found here `https://www.umsu.de/trees/` - provide tree proofs of the following entailments, which are known as the De Morgan's laws:
+<<<<<<< dmcnulty27-patch-1
+  (a)  PP that says that x is a part of y and the inverse (y is a part of x) is not true 
+  
+  (a)  I am not sure is this is doable because you cannot make an identity claim 
+  
+  (a)  PP ≡ P ⊓ ¬P- 
+  
 
-  ````(a) ∀x∀y(¬(Px ∧ Qx) → (¬Px ∨ ¬Qx))
-  (b) ∀x∀y(¬(Px ∨ Qx) → (¬Px ∧ ¬Qx))
-  (c) ∀x∀y((¬Px ∨ ¬Qx) → ¬(Px ∧ Qx))
-  (d) ∀x∀y((¬Px ∨ ¬Qx) → ¬(Px ∧ Qx))
+  (b) iPP that says that it is not the case the x is a part of y and the inverse (y is a part of x) is true
+  
+  (b) I am not sure is this is doable because you cannot make an identity claim
+  
+  (b) iPP ≡ ¬P ⊓ P-
+=======
+3. Translate the following first-order logic axioms into ALCI: 
+```
+(a) ∀x∃y∀z(R(x,y) ∧ R(x,z) ∧ R(y,z))
+(b) ∃x∀y∃z(R(x,y) ∧ R(x,z) ∧ R(y,z))
+(c) ∀y(R(x, y) → ∃x(R(y, x) ∧ ∀y(R(x, y) → A(y))))
+(d) (∀y)(R(x, y) → A(y)) ∧ (∃y)(R(x, y) ∧ B(y))
+```
+4. Provide an interpretation I<sub>1</sub> for ALC and an interpretation I<sub>2</sub> for ALCN - each distinct from any interpretation covered in class so far - and construct a bisimulation that demonstrates ALCN is more expressive than ALC. Use the [mermaid syntax](https://github.com/mermaid-js/mermaid) of markdown to provide a graphical representation of your work. Feel free to use the [mermaid live editor](https://mermaid.live/) when diagramming. 
 
- (a) ¬∀x∀y(¬(Px ∧ Qx) → (¬Px ∨ ¬Qx))
-¬∀y(¬(Pa ∧ Qa) → (¬Pa ∨ ¬Qa))      (1)
-¬(¬(Pa ∧ Qa) → (¬Pa ∨ ¬Qa)).       (2)
-       ¬(Pa ∧ Qa)                  (3)
-       ¬(¬Pa ∨ ¬Qa)                (3)
-          ¬¬Pa                     (5)
-          ¬¬Qa                     (5)
-           Qa                      (7)
-           Pa                      (6)
+5. Provide an interpretation I<sub>1</sub> for ALC and an interpretation I<sub>2</sub> for ALCN - each distinct from any interpretation covered in class so far - and construct a bisimulation that _does not_ demonstrate ALCN is more expressive than ALC. Use the [mermaid syntax](https://github.com/mermaid-js/mermaid) of markdown to provide a graphical representation of your work. Feel free to use the [mermaid live editor](https://mermaid.live/) when diagramming. 
+>>>>>>> main
 
-¬Pa (4)              ¬Qa (4)
- x                   x
+  
+  (c) iP that says x iP y means that y is a part of x
+  
+  (c) iP ≡ ∀part_of-.C
+  
+  (c) iP ≡ P-
+   
+  (d)  O that says that x overlaps y -- x is a whole including such a thing that it is a part of another thing y, so x and y has the same part
+  
+  (d)  I am not sure if you can do this becuase you cannot make an identity claim. This is a psapaital relation not sure how to manage that gap. It could be that they share a part? You would need 3 parts and that does not seem plausible. 
+  
+  (d)  O ≡ ∃P-.(∃P)
+  
+  (e)  D that says that x and y are disjoint --x has no part of y and y has no part of x
+  
+  (e)  I am not sure if you can do this becuase you cannot make an indentity claim 
+  
+  (e)  D ≡ ¬O 
+  
+2. Use your axioms from question 1 as the basis of an ALCI T-Box. Supplement this T-box with whatever other axioms you like, as well as an A-box, so that you ultimately construct a knowledge base K = (T,A). Provide a model of K. This may be graphical or symbolic or both.
+
+<<<<<<< dmcnulty27-patch-1
+TBox:{
+PP ⊑ P 
+
+P ⊑ O 
+
+iPP ⊑ iP
+
+O ⊑ O¯
+
+O¯ ⊑ O
+
+D ⊑ ¬O}
+
+ABox:{
+
+(Utah, USA):P,
+
+(Bryce Canyon, Utah):PP, 
+
+(Bryce Canyon, USA):PP, 
+
+(USA, Utah):iPP, 
+
+(Utah, USA):O, 
+
+(Oregon, Utah):D,
+
+}
+
+
+ΔI = {Bryce Canyon, Utah, Oregon, USA}
+
+Named Individuals:
+
+Bryce Canyon = NP
+
+Utah = U
+
+USA = A
+
+Oregon = O
+
+Concept Assignments: 
+Bryce Canyon = {NP}, 
+State = {U, O}, 
+Country = {A} 
+
+Role Assignments:
+P (Part_of) = {(NP, U), (NP,A), (U,A), (O,A), (U,U), (O,O), (A,A)}
+
+PP (ProperPart_of) = {(NP,U), (NP,A), (U,A), (O,A)}
+
+iP (inverse Part_of) = {(U,NP), (A,U), (A,O), (A,NP), (U,U), (O,O), (A,A)}
+
+iPP (inverse ProperPart_of) = {(U,NP), (A,NP), (A,U), (A,O)}
+
+O (overlaps) = {(NP,U), (NP,A), (U,A), (O,A), (NP, NP), (U,U), (A,A), (O,O)}
+
+D (disjoint) = {(O,U), (NP, O)}
+
+Please note my model does not show all possible as described in the Knowledge Base
+![Protege2a](https://user-images.githubusercontent.com/123985147/221180906-722d91a8-0186-4906-83d5-af76193f531f.png)
+
+
+As a Bonus here is my favorite picture I've taken at Bryce Canyon, it is at Sunrise (My favorite National Park in Utah). As well as my favorite picture I've taken in Oregon at Crater Lake (The only National Park in Oregon) simply becuase I miss the West. 
+
+![Bryce Canyon Sunrise](https://user-images.githubusercontent.com/123985147/221182562-89053251-07f0-4fa1-a50f-29f9cf168bad.jpg)
+
+![Crater Lake Wizard Island](https://user-images.githubusercontent.com/123985147/221182582-a440f7bb-c20a-4de5-b50e-8c33abafdac5.jpg)
+
+
+3. Translate the following first-order logic axioms into ALCI:
+
+⊔ ⊓ ⊧ ⊭ ⊦ ⊬ ⊏ ⊐ ⊑ ⊒ C ¬ ≡ ≠ ≥ ≤ ∃ ∀
+Note that we can drop the first universal quantifiers :)
+
+
+(a) ∀x∃y∀z(R(x,y) ∧ R(x,z) ∧ R(y,z)) - For all cases of x there is some y such that for all cases of z it is the case that all instances of x Rs some instance of y and all instances of x Rs all instances of z and some y Rs all instances z
  
-11.¬Qa(4)
-x
-(b) ¬∀x∀y(¬(Px ∨ Qx) → (¬Px ∧ ¬Qx))  
- ¬∀y(¬(Pa ∨ Qa) → (¬Pa ∧ ¬Qa))     (1)
-  ¬(¬(Pa ∨ Qa) → (¬Pa ∧ ¬Qa))      (2)
-         ¬(Pa ∨ Qa)                (3)
-         ¬(¬Pa ∧ ¬Qa)              (3)
-         ¬Pa                  	   (4)
-             ¬Qa                   (4)
+∃R.(∀R.T)⊓∃R.T
 
-¬¬Pa (5)                ¬¬Qa 	   (5)  
-Pa (8)                  Qa (9)
-x                       x
+(b) ∃x∀y∃z(R(x,y) ∧ R(x,z) ∧ R(y,z)) - There is some x such that for all y there is some z such that it is the case that some instance of x Rs all instances of y and x Rs some instance of z and all instances of y Rs some z
 
-(c) ¬∀x∀y((¬Px ∨ ¬Qx) →  ¬(Px ∧ Qx))
- ¬∀y(¬(Pa ∨ Qa) →  ¬(Pa ∧ Qa))     (1)
-  ¬(¬(Pa ∨ Qa) →  ¬(Pa ∧ Qa))      (2)
-         ¬Pa ∨  ¬Qa               (3)
-         ¬¬(Pa ∧ Qa)              (3)
-      Pa ∧ Qa                 	   (5)
-         Pa                   	   (6)
-             Qa                   (6)
+∃R-.(∃R.(∃R-.T))
 
-¬Pa (4)                 ¬Qa (4)  
-x                        x
+∃R-.∃R¯(∃R).∃R(T)
 
-(d) ¬∀x∀y((¬Px ∨ ¬Qx) → ¬(Px ∧ Qx))
-  ¬∀y((¬Pa ∨ ¬Qa) → ¬(Pa ∧ Qa))	(1)
-    ¬((¬Pa ∨ ¬Qa) → ¬(Pa ∧ Qa))	(2)
-	     ¬Pa ∨ ¬Qa		(3)
-	    ¬¬(Pa ∧ Qa)		(3)
-		Pa ∧ Qa		(5)
-		Pa		(6)
-		   Qa		(6)
-¬Pa(4)			¬Qa 	(4)
-x			   x
+(c) ∀y(R(x, y) → ∃x(R(y, x) ∧ ∀y(R(x, y) → A(y)))) - For all y if there is some x thats Rs all instances of y then there is some x such that all instances of y Rs some x and for all y if x Rs y then y As
 
-![proof](https://user-images.githubusercontent.com/123985147/216454220-f9b7c892-d73c-4409-a564-92250dfb8be2.png)	
-![Proof2](https://user-images.githubusercontent.com/123985147/216454252-833dd3bb-4fc4-465e-89cf-18ebeb2bc6e6.png)
-![Proof3](https://user-images.githubusercontent.com/123985147/216454294-d01f5cc1-2d68-467c-8f45-74d69fff8318.png)
-![proof](https://user-images.githubusercontent.com/123985147/216454485-9f253939-e4a4-4cea-8487-18726310b83f.png)
+Is this well-formed? I think not. If the implicit universal is there then why would we introduce the extistential x....
 
-9. Using a natural deduction proof generator - such as the one found here `https://proofs.openlogicproject.org/` - provide natural deduction proofs for each of De Morgan's laws. 
+(d) (∀y)(R(x, y) → A(y)) ∧ (∃y)(R(x, y) ∧ B(y)) - For all y if x Rs y then y As and some instances of y x Rs y and y Bs
 
-(a)
-1. Show: ∀x∀y(¬(Px ∧ Qx) → (¬Px ∨ ¬Qx))
-2. 	Show: ∀y(¬(Px ∧ Qx) → (¬Px ∨ ¬Qx))    
-3. 		Show: ¬(Px ∧ Qx) → (¬Px ∨ ¬Qx)
-4. 		¬(Px ∧ Qx)		    			Ass CD
-5. 			Show: (¬Px ∨ ¬Qx)   
-6. 			~(¬Px ∨ ¬Qx)	   			Ass ID
-7. 				Show: Px   				
-8. 				~Px	  			        Ass ID
-9. 				~Px V ~Qx			      8, Add
-10.								            6, 9, ID
-11.				Show: Qx   
-12.				~Qx	  			        Ass ID
-13.				~Px V ~Qx			      12, Add
-14.								            6, 13, ID
-15.				Px ∧ Qx	   			    7, 11, Adj
-16.						                4, 15, ID
-17.							              5, CD
-18.								            3, UD
-19.							              2, UD
+I am not sure about this because it feels like 3 variables might be hard to note but assuming the implicit universal x....
 
-(b)
-1. Show: ∀x∀y(¬(Px ∨ Qx) → (¬Px ∧ ¬Qx))
-2.	Show: ∀y(¬(Px ∨ Qx) → (¬Px ∧ ¬Qx))
-3. 		Show: ¬(Px ∨ Qx) → (¬Px ∧ ¬Qx)
-4. 		¬(Px ∨ Qx)					            Ass CD
-5.			Show: (¬Px ∧ ¬Qx)
-6.			~(~Px ∧ ¬Qx)			           	Ass ID
-7.				Show: ~Px
-8.				Px				                  Ass ID, DN
-9.				Px V Qx				              8, Add
-10.								                    4, 9 ID
-11. 				Show: ~Qx
-12.				      Qx				            Ass ID, DN
-13.			        	Px V Qx				      12, Add
-14.								                    4, 13, ID
-15.			         ~Px ∧ ¬Qx  	    		7, 11, Add
-16.								                    15, DD
-17. 							                  	5, CD
-18.							                     	3, UD
-19.								                    2, UD
-(c)   
-1. Show: ∀x∀y((~Px ∨ ~Qx) → ~(Px ∧ Qx))
-2. 	Show: ∀y((~Px ∨ ¬Qx) → ~(Px ∧ Qx))
-3. 		Show: (~Px ∨ ~Qx) → ~(Px ∧ Qx)
-4. 		(~Px ∨ ~Qx)					              Ass CD
-5. 			Show: ~(Px ∧ Qx)
-6. 			(Px ∧ Qx)				                Ass ID, DN
-7. 			Px					                    6, S
-8.			~~Px					                  7, DN
-9.			~Qx					                    4, 8, MTP
-10.			Qx				                    	6, S
-11.								                      9, 10, ID
-12. 								                    5, CD
-13. 							                    	3, UD
-14.								                      2, UD
-(d)
-1. Show: ∀x∀y((¬Px ∧ ¬Qx) → ~(Px ∨ Qx))
-2. 	Show: ∀y((¬Px ∧ ¬Qx) → ~(Px ∨ Qx))
-3. 		Show: (¬Px ∧ ¬Qx) → ~(Px ∨ Qx)
-4.		(~Px ∧ ~Qx)					              Ass CD
-5.		~Px						                    4, S
-6.		~Qx					                     	4, S
-7.			Show: ~(Px ∨ Qx)
-8.			(Px ∨ Qx)				               Ass ID, DN
-9.			Qx					                   5, 8, MTP
-10.								                     6, 9, ID
-11.								                     7, CD
-12.								                     3, UD
-13.							                       2, UD
+ (∀R.A) ⊓ (∃R.B)
+=======
+6. Explain the difference - using natural language - between the description logic expressions:
+  ```
+  (a) ∃r.C and ∀r.C
+  (b) ∃r-.C and ∀r-.C
+  (c) <=nr and <=nr.C
+  (d) ∃r-.C and ∃r-.{a} 
+```
+>>>>>>> main
 
-Compare and contrast the proofs provided for (a) in your answers to questions 8 and 9. Explain the different assumptions, strategies, etc. exhibited in tree proofs vs natural deduction proofs. 
+4. Provide an interpretation I1 for ALC and an interpretation I2 for ALCN - each distinct from any interpretation covered in class so far - and construct a bisimulation that demonstrates ALCN is more expressive than ALC. Use the mermaid syntax of markdown to provide a graphical representation of your work. Feel free to use the mermaid live editor when diagramming.
 
-Well firsty and perhaps most notably the tree proof software provides no annotations (justifications?) for the how each line is derived from the line before it. I personally like having the annotations as it shows clearly how to move from one step to the next. Further, the tree proofs look like they start by universally instainting whereas in the natural deduction proofs you can go several route but the easiest with Universal Quantifiers is usually a universal derivation. I myself am prone to doing indirect derivations. This is because if it can be derived you can always(?) find a contradiction. Obviously, I still assumed inderictly once all of the unviersal were removed from the situation to complete the derivations. 
+![Protege5](https://user-images.githubusercontent.com/123985147/221069424-1023a268-b07b-42b1-8a29-61ba9ae02ccf.png)
+
+<<<<<<< dmcnulty27-patch-1
+D=Delaney
+
+
+ΔI1 = {Delaney, Perci, Moia, Theia}
+
+Named IndividualsI: 
+DelaneyI = D
+PerciI = Perci 
+MoiraI = Moira
+TheiaI = Theia
+ 
+
+Role Assignments: t = {(D, Perci), (D, Moira), (B, Theia)}
+
+ΔI2 = {Delaney, Perci, Moira}
+
+Named IndividualsI: 
+DelaneyI2 = D2 
+PerciI2 = Perci2 
+MoiraI2 = Moira2
+
+Role Assignments: t2 = {(D2, Perci2), (D, Moira2)}
+
+Bisimulation:
+
+ρ = {(D, D2), (Perci, Perci2), (Moira, Moira2), (Theia,Moira2)}
+
+So B is bisimilar to B2. By defining the role t as ≥2 ∃t.⊤ in I1 ≥1 ∃t2.⊤ in I2" -- You should intead say, "I1 there is an element with 3 successors but in I2 there is an element with 2 elements
+
+5. Provide an interpretation I1 for ALC and an interpretation I2 for ALCN - each distinct from any interpretation covered in class so far - and construct a bisimulation that does not demonstrate ALCN is more expressive than ALC. Use the mermaid syntax of markdown to provide a graphical representation of your work. Feel free to use the mermaid live editor when diagramming.
+
+![Protegestuff](https://user-images.githubusercontent.com/123985147/221460447-35c7e465-c183-414e-86ff-4a57781af232.png)
+
+Named IndividualsI: 
+DelaneyI=D
+PerciI=Perci
+MoiraI=Moira 
+
+
+Role Assignments t={(D, Perci), (D,Moira)}
+
+ΔI2= {Delaney, Perci, Moira}
+
+Named IndividualsI: 
+DelaneyI2=D2
+PerciI2=Perci2
+MoiraI2=Moira2
+
+Role Assignments: t2 ={(D2,Percival), (D2, Moira Lee)}
+
+Bisimulation:
+
+ρ = {(D, D2), (Moira, Moira2), (Perci, Perci2)}
+
+So B is bisimilar to B2. But we cannot distinguish formula X in ALC and ALCN
+
+6. Explain the difference - using natural language - between the description logic expressions:
+
+⊔ ⊓ ⊧ ⊭ ⊦ ⊬ ⊏ ⊐ ⊑ ⊒ C ¬ ≡ ≠ ≥ ≤ ∃ ∀
+
+(a) ∃r.C and ∀r.C
+
+
+(a) Corresponds to all instances that relates to some instances of C
+
+(a) Corresponds to all instances that relates to only instances of C
+
+(b) ∃r-.C and ∀r-.C
+
+(b) The first refers to all instances which have some instance C as a r-predecessor.
+
+(b) The second refers to all instances which have only instances of C as r-predecessors
+
+(c) <=nr and <=nr.C
+
+(c) The first one refers to all instances which have no more than n r-fillers.
+
+(c) Corresponds to restrictions that r is realted to no more than n instances of C
+
+(d) ∃r-.C and ∃r-.{a} 
+
+(d) The first one should mean all instances which has some instance of C as r-predecessor
+
+(d) The second one refers to all instances which have some r-predecessor which is just a.
+
+7. There is a delightfully helpful subreddit called "ELI5" which stands for something like "explain it like I'm 5" where users post conceptually challenging questions and other users attempt to provide explanations in simple, jargon-free, terms that presumably a 5 year-old could understand. Using this as a model, explain the finite model property. Be sure to provide a simple example and explain when the property might be important, and when it is not so important.
+
+Answer to 7. Consider a puzzle. A puzzle has a finite number of pieces and can be solved in a finite number of moves. This is to say a finite model property describes something that is true in a system and can be proven to be true within a finite number of moves, with a finite number of pieces. Importance? The finite model property is useful in that it creates a domain (edge pieces) around a concept (the whole puzzle) so that there are not infite numbers of possible pieces to the concept or puzzle. Unimportance? If we are talking about infite possibilties it is not useful to have a strict domain as the domain is never-ending in such a case, imagine a puzzle that continues to generate a new piece everytime one is put into place. This is to say a Finite model property can be used to design a procedure used for solving a problem or performing a computation for its satisfiable concepts.
+
+![puzzles](https://user-images.githubusercontent.com/123985147/221069880-c9c63073-958e-4b3f-b024-d4a33a0cb7b1.jpg)
+
+8. Following up on the preceding , explain the tree model property. Be sure to provide a simple example and explain when the property might be important, and when it is not so important.
+
+
+Answer to 8. It is like playing Guess Who? such that we start with knowing one descriptor of the person pictured (the root). Depending on the how you guess and question the Guess Who? board will start to show patterns into different (or branches) possibilties. If you guess males you go through one pattern if you guess females you go through another pattern and if you guess gender non-conforming you will be lead down yet another pattern. Once you guess the right person (the leaf) you have reached the end of the model. Importance? The important aspect of this model is that you can see the different possible pattern the game takes and how each guess or question gets you closer to the answer! Unimportance? If you know who to guess there is no reason to go through the garden of forking paths. You can use a tree model property to check for and adhere to consistencies is a visual anaylsis platform.
+
+![guess-who-board-game-hand](https://user-images.githubusercontent.com/123985147/221070772-8118287d-9ed2-44b0-a4d0-d8b6f6fa4f80.png)
+
+
+9. Open the Protege editor and create object properties for each of the role names that you constructed in question 1. You should have at least 6 object properties. Assert in the editor that P is a sub-property of O, that P is transitive, and that O is symmetric. Next, add individuals - a, b, c - to the file and assert that c is part of a and that c overlaps b. Running the reasoner should reveal - highlighted in yellow if you select the individual c - that c overlaps a. Using the discussion in the selections from chapter 4 of the Baader, et. al. text as a guide, explain how the tableau algorithm is generating this inference. Also, provide a screenshot of the results of your reasoner run with c highlighted.
+
+![Protege](https://user-images.githubusercontent.com/123985147/221044462-590df2a7-230f-438d-863d-0da5b661fbeb.png)
+
+Answer to second part of 9. It is my understanding that Tableau works from the knowledge base (Tbox + ABox) which we build out when we create things like class, individuals, and object properties and the ilk. By asserting things we build a something similiar to a tree model such that when the reasoner runs it considers possible interpretations and extends interpretations based off the assertations already put in place. The reasoner will notice the logical relations like if you assume disjoint (e,a) and thus the reasoner will infer disjoint (a,e) it happens like this because we assert the disjoint is symmetric and the reason will pull out the second disjoint from the first.
+
+10. Following up on your work in question 9, adjust/add/remove/etc. object properties and individuals in your Protege file so that when you run a reasoner in Protege, you return the following consequences:
+
+  (a) a is a proper part of b and disjoint from e
+  
+=======
+9. Open the Protege editor and create object properties for each of the role names that you constructed in question 1. You should have at least 6 object properties. Assert in the editor that P is a sub-property of O, that P is transitive, and that O is symmetric. Next, add individuals - a, b, c - to the file and assert that c is part of a and that c overlaps b. Running the reasoner should reveal - highlighted in yellow if you select the individual c - that c overlaps a. Using the discussion in the selections from chapter 4 of the Baader, et. al. text as a guide, explain how the tableau algorithm is generating this inference. Also, provide a screenshot of the results of your reasoner run with c highlighted. 
+
+10. Following up on your work in question 9, adjust/add/remove/etc. object properties and individuals in your Protege file so that when you run a reasoner in Protege, you return the following consequences: 
+```
+  (a) a is a proper part of b and disjoint from e
+>>>>>>> main
+  (b) a overlaps c
+  
+  (c) a is part of b, b is part of f, and a is part of f 
+  
+  (e) There are no parts between a and g in common
+<<<<<<< dmcnulty27-patch-1
+  
+Provide a screenshot of your results here.
+
+As it states post a screen shot I will only one post a screenshot :)
+
+![PROTEGE2](https://user-images.githubusercontent.com/123985147/221046071-9b2c21be-4508-47d3-813b-93b5838a0414.png)
+=======
+```
+Provide a screenshot of your results here. 
+>>>>>>> main
