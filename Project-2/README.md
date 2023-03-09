@@ -264,6 +264,8 @@ Answer to second part of 9. It is my understanding that Tableau works from the k
   
 Provide a screenshot of your results here.
 
+![Screenshot_20230223_053428](https://user-images.githubusercontent.com/123985147/224135102-3f547914-67b8-4e80-a723-2fac4eec2f1a.png)
+
 As it states post a screen shot I will only one post a screenshot :)
 
-![PROTEGE2](https://user-images.githubusercontent.com/123985147/221046071-9b2c21be-4508-47d3-813b-93b5838a0414.png)
+
