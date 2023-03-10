@@ -288,10 +288,10 @@ Answer to second part of 9. It is my understanding that Tableau works from the k
   (c) a is part of b, b is part of f, and a is part of f 
   
   (e) There are no parts between a and g in common
-
   
 Provide a screenshot of your results here.
 
 As it states post a screen shot I will only one post a screenshot :)
 
-![PROTEGE2](https://user-images.githubusercontent.com/123985147/221046071-9b2c21be-4508-47d3-813b-93b5838a0414.png)
+![Protegereasoner10](https://user-images.githubusercontent.com/123985147/224288698-ac50961e-a28b-403b-99a6-46b154862d48.png)
+
