@@ -17,6 +17,7 @@ For any question involving the use of Protege, please be sure to import Basic Fo
   reciprocal_of seems like it should be symmetric. A reciprocal friendship is one which goes both ways. 
   (d)  Functional has relative magnitude 
   (e)  Symmetric and Reflexive
+  
    Correlated_with should be symmetric and reflexive. If weight gain is correlated with depression, then depression is correlated with weight gain. Weight gain is also correlated with weight gain. (this sounds dumb) 
 ```
 
@@ -40,41 +41,42 @@ For any question involving the use of Protege, please be sure to import Basic Fo
 Tuesday is instance_of one-dimensional temporal region 
 Wednesday is an instance of one-dimensional temporal region 
 Arm is an instance of fiat object part
-“Sally participates in having at least one arm on Tuesday” is an instance of occurrent 
-“Sally participates in having no arms on Wednesday” is an instance of occurrent
 “Sally participates in having at least one arm on Tuesday precedes Sally participates in having no arms on Wednesday”
+“Sally participates in having at least one arm on Tuesday precedes Sally participates in having at most one arm on Wednesday”
 
-  (b) Every liver has some cell as part at all times it exists.
-  Liver has_part_at_all_times Cell
+ (b) Every liver has some cell as part at all times it exists.
+  Liver has_part_at_all_times some Cell
   
-  (c) John was a child, then an adult, then a senior. 
-  John is an instance_of object
+(c) John was a child, then an adult, then a senior. 
+John is an instance_of object
 childhood is an instance_of occurrent.
 adulthood is an instance_of occurrent.
 seniorhood is an instance_of occurrent.
 “John participates in childhood precedes John participates in adulthood which precedes John participates in seniorhood.”
 
-  (d) Goofus and Gallant are married at each point in a three year span. 
-  Goofus is an instance_of object
-Gallant is an instance_of object
-Marriage is an instance_of occurent
-“Three years span 1” is an instance_of one-dimensional temporal region.
-If zero-dimensional temporal region t1 is part_of the one-dimensional temporal region “three years span 1”, then Goofus participates in marriage at t1 and Galland participates in marriage at t1.
+(d) Goofus and Gallant are married at each point in a three year span. 
+Goofus spouse_of Gallant at t1
+
 ```
 
 4. Using the language of First-Order Logic, represent the following natural language expressions; you are welcome to introduce new terms where needed: 
+
 ``(a) Sally has an arm Tuesday but does not have an arm Wednesday.
-  ∃(x)(Sx^(Tx^~Wx)) 
-  S=Is Sally 
-  T=Has an arm on Tuesday 
-  W=Has an arm on Wednesday
-  (b) Every liver has some cell as part at all times it exists.
-  ∀(x)(Lx->∃(y)(Cy^Pyx))
-  L=Is a liver 
-  C=Is a cell 
-  P=_is a part of_
+  ∃x (Tx ∧ ∃y (Hsy∧Ay)) ∧ ∃x (Wx ∧ ~∃y(Hsy∧Ay))
+  T: Tuesday
+  H: has
+  A: arm
+  W: Wednesday
+  s: Sally
+
   
-  (c) John was a child, then an adult, then a senior.
+  (b) Every liver has some cell as part at all times it exists.
+  ∀x∃y(Lx→Cy∧Pyx)
+  L: liver
+  C: cell
+  P: part of
+  
+(c) John was a child, then an adult, then a senior.
 ∃t1∃t2∃t3 (C (j, t1) ∧ A (J, t2) ∧ S(J, t3) ∧ E (t1, t2) ∧ E (t1, t3))
 j = John
 E xy = being earlier than
@@ -86,7 +88,7 @@ S (x, t) = being a senior at t
    
 ∀t(D(t) ∧ Y(t)→(M(g1,t) ∧ M(g2,t)))
 M(x, t) = being married at t
-Y(t) = belongs to 3 year span 1
+Y(t) = belongs to 3 year span t
 g1 = Goofus
 g2 = Gallant
 D(t) = t is a day
@@ -112,7 +114,6 @@ Computer 3 is an instance_of material entity
 Computer 1 2 and 3 are part of Network 1
 Network 1 is an instance_of Network
 Network is_a object aggregate
-
 
 
 6. Using Protege, place these in the BFO hierarchy where you think they fit best:
