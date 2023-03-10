@@ -36,6 +36,15 @@ Tip #4: Work together as a team.
   
   (b) iPP ≡ ¬P ⊓ P-
 
+  (c)  iP that says that x has y as part 
+  
+  
+  (d)  O that says that x overlaps y
+  
+  
+  (e)  D that says that x and y are disjoint 
+
+  
   
 2. Use your axioms from question 1 as the basis of an ALCI T-Box. Supplement this T-box with whatever other axioms you like, as well as an A-box, so that you ultimately construct a knowledge base K = (T,A). Provide a model of K. This may be graphical or symbolic or both.
 
