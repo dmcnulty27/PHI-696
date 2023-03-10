@@ -11,20 +11,18 @@ Tip #4: Work together as a team.
 
 
 1. Let V be a vocabulary of ALCI consisting of a role name "P". Interpret part_of as "x is a part of y". Using this role name, define the following formulas in this language:
-<<<<<<< dmcnulty27-patch-1
-=======
+
 ```
   (a)  PP that says that x is a proper part of y
   (b)  iPP that says that y is a proper part of x
   (c)  iP that says that x has y as part 
   (d)  O that says that x overlaps y
   (e)  D that says that x and y are disjoint 
+  
 ```
->>>>>>> main
 
 ⊔ ⊓ ⊧ ⊭ ⊦ ⊬ ⊏ ⊐ ⊑ ⊒ C ¬ ≡ ≠ ≥ ≤ ∃ ∀
 
-<<<<<<< dmcnulty27-patch-1
   (a)  PP that says that x is a part of y and the inverse (y is a part of x) is not true 
   
   (a)  I am not sure is this is doable because you cannot make an identity claim 
@@ -37,37 +35,7 @@ Tip #4: Work together as a team.
   (b) I am not sure is this is doable because you cannot make an identity claim
   
   (b) iPP ≡ ¬P ⊓ P-
-=======
-3. Translate the following first-order logic axioms into ALCI: 
-```
-(a) ∀x∃y∀z(R(x,y) ∧ R(x,z) ∧ R(y,z))
-(b) ∃x∀y∃z(R(x,y) ∧ R(x,z) ∧ R(y,z))
-(c) ∀y(R(x, y) → ∃x(R(y, x) ∧ ∀y(R(x, y) → A(y))))
-(d) (∀y)(R(x, y) → A(y)) ∧ (∃y)(R(x, y) ∧ B(y))
-```
-4. Provide an interpretation I<sub>1</sub> for ALC and an interpretation I<sub>2</sub> for ALCN - each distinct from any interpretation covered in class so far - and construct a bisimulation that demonstrates ALCN is more expressive than ALC. Use the [mermaid syntax](https://github.com/mermaid-js/mermaid) of markdown to provide a graphical representation of your work. Feel free to use the [mermaid live editor](https://mermaid.live/) when diagramming. 
 
-5. Provide an interpretation I<sub>1</sub> for ALC and an interpretation I<sub>2</sub> for ALCN - each distinct from any interpretation covered in class so far - and construct a bisimulation that _does not_ demonstrate ALCN is more expressive than ALC. Use the [mermaid syntax](https://github.com/mermaid-js/mermaid) of markdown to provide a graphical representation of your work. Feel free to use the [mermaid live editor](https://mermaid.live/) when diagramming. 
->>>>>>> main
-
-  
-  (c) iP that says x iP y means that y is a part of x
-  
-  (c) iP ≡ ∀part_of-.C
-  
-  (c) iP ≡ P-
-   
-  (d)  O that says that x overlaps y -- x is a whole including such a thing that it is a part of another thing y, so x and y has the same part
-  
-  (d)  I am not sure if you can do this becuase you cannot make an identity claim. This is a psapaital relation not sure how to manage that gap. It could be that they share a part? You would need 3 parts and that does not seem plausible. 
-  
-  (d)  O ≡ ∃P-.(∃P)
-  
-  (e)  D that says that x and y are disjoint --x has no part of y and y has no part of x
-  
-  (e)  I am not sure if you can do this becuase you cannot make an indentity claim 
-  
-  (e)  D ≡ ¬O 
   
 2. Use your axioms from question 1 as the basis of an ALCI T-Box. Supplement this T-box with whatever other axioms you like, as well as an A-box, so that you ultimately construct a knowledge base K = (T,A). Provide a model of K. This may be graphical or symbolic or both.
 
@@ -170,7 +138,8 @@ I am not sure about this because it feels like 3 variables might be hard to note
 
 4. Provide an interpretation I1 for ALC and an interpretation I2 for ALCN - each distinct from any interpretation covered in class so far - and construct a bisimulation that demonstrates ALCN is more expressive than ALC. Use the mermaid syntax of markdown to provide a graphical representation of your work. Feel free to use the mermaid live editor when diagramming.
 
-![Screenshot_20230224_113855](https://user-images.githubusercontent.com/123985147/224135558-cac6f27d-87e8-42d7-9810-f5507de3f04c.png)
+
+![Screenshot_20230223_082151](https://user-images.githubusercontent.com/123985147/224420902-07219255-97bb-4325-87d1-cd3415a93043.png)
 
 
 D=Delaney
@@ -235,7 +204,6 @@ So B is bisimilar to B2. But we cannot distinguish formula X in ALC and ALCN
 
 (a) ∃r.C and ∀r.C
 
-
 (a) Corresponds to all instances that relates to some instances of C
 
 (a) Corresponds to all instances that relates to only instances of C
@@ -292,6 +260,5 @@ Answer to second part of 9. It is my understanding that Tableau works from the k
 Provide a screenshot of your results here.
 
 As it states post a screen shot I will only one post a screenshot :)
-
+```
 ![Protegereasoner10](https://user-images.githubusercontent.com/123985147/224288698-ac50961e-a28b-403b-99a6-46b154862d48.png)
-
