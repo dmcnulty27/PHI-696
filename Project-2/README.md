@@ -149,7 +149,7 @@ I am not sure about this because it feels like 3 variables might be hard to note
 4. Provide an interpretation I1 for ALC and an interpretation I2 for ALCN - each distinct from any interpretation covered in class so far - and construct a bisimulation that demonstrates ALCN is more expressive than ALC. Use the mermaid syntax of markdown to provide a graphical representation of your work. Feel free to use the mermaid live editor when diagramming.
 
 
-![Screenshot_20230223_082151](https://user-images.githubusercontent.com/123985147/224420902-07219255-97bb-4325-87d1-cd3415a93043.png)
+[![](https://mermaid.ink/img/pako:eNp1jk0LgzAMhv9KyVl38NjDYMPrYDBPW3cIGmdZP6S2iKj_fVUmjLHllOR5eJMRSlsRcKiV7csGnWdFLgyLdbjlpNDQcGfpLt2zqUf17KaTlQ7Zt7IYb-FMrpQr_4mLhiQKI8xxo9knXuOzf3TNziABTU6jrOLj43JKgG9IkwAe24pqDMoLEGaOKgZvL4MpgXsXKIHQVugpl_hwqIHXqLq4bdFcrd3m-QX8mWAP?type=png)](https://mermaid.live/edit#pako:eNp1jk0LgzAMhv9KyVl38NjDYMPrYDBPW3cIGmdZP6S2iKj_fVUmjLHllOR5eJMRSlsRcKiV7csGnWdFLgyLdbjlpNDQcGfpLt2zqUf17KaTlQ7Zt7IYb-FMrpQr_4mLhiQKI8xxo9knXuOzf3TNziABTU6jrOLj43JKgG9IkwAe24pqDMoLEGaOKgZvL4MpgXsXKIHQVugpl_hwqIHXqLq4bdFcrd3m-QX8mWAP)
 
 
 D=Delaney
