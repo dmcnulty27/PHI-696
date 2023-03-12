@@ -10,15 +10,19 @@ For any question involving the use of Protege, please be sure to import Basic Fo
 ```
   (a)  Reflexive
  Located_in should be reflexive. I am located in my self.
+ 
   (b)  Transitive 
  Occurs_in should be transitive. If a robery occurs in a building and that building is inside of a jurisdiction, then that robery happened inside of that jurisdiction.
   But also, branking should be because the inverse relation is. 
+  
   (c)  Symmetric
   reciprocal_of seems like it should be symmetric. A reciprocal friendship is one which goes both ways. 
-  (d)  Functional has relative magnitude 
-  (e)  Symmetric and Reflexive
   
-   Correlated_with should be symmetric and reflexive. If weight gain is correlated with depression, then depression is correlated with weight gain. Weight gain is also correlated with weight gain. (this sounds dumb) 
+  (d)  Functional has relative magnitude
+  has_target_end_location
+  
+  (e)  Symmetric and Reflexive
+  Correlated_with should be symmetric and reflexive. If weight gain is correlated with depression, then depression is correlated with weight gain. Weight gain is also correlated with weight gain. (this sounds dumb) 
 ```
 
 2. In BFO and RO identify at least one object property for each of a-e that _should not have the listed property, but which does_; argue for your case, using examples. 
@@ -115,6 +119,8 @@ Computer 1 2 and 3 are part of Network 1
 Network 1 is an instance_of Network
 Network is_a object aggregate
 
+![image](https://user-images.githubusercontent.com/123985147/224543842-c889e379-fadf-4492-91b5-5b5fe8c71c7c.png)
+
 
 6. Using Protege, place these in the BFO hierarchy where you think they fit best:
 ```
@@ -133,6 +139,7 @@ Network is_a object aggregate
   (g) Ocean
 Class or instance. It depends on what we are talking about. If we are counting the things in the ocean as part of what we mean by "ocean", then it is an object aggregate. If we mean the location, then it is a site. 
   (h) Lake 
+   Site, a lake is locatated in a specific space 
  
 ```
 
@@ -156,6 +163,7 @@ Class or instance. It depends on what we are talking about. If we are counting t
   False, it is spaciotemporal region. 
   (i) The continuant fiat boundary class of BFO is closed, meaning, there are no subclasses beyond those identified presently in BFO. 
 True and false. It depends on where the new subclass is stored. If it is in a CCO ontology, then it is not part of BFO. I see no reason that there cannot be a subclass of "two-dimensional continuant fiat boundary"
+
 ```
 
 8. Model the following scenario in BFO, introducing whatever terms are needed to do so: John runs for 3 hours, startin slowly, speeding up during the middle, then ending the run at a slower pace.  
@@ -178,6 +186,7 @@ John's Speed at Beginning is decreased_in_magnitude_relative_to John's Speed at 
 John's speed at Middle is increased_in_magnitude_relative_to John's Speed at End
 John's speed at End is decreased_in_magnitude_relative_to John's Speed at Beginning
 
+![image](https://user-images.githubusercontent.com/123985147/224543941-793e3666-5b57-451a-82e5-c2ee131d7a66.png)
 
 
 9. The Pellet reasoner in Protege can be used in an incremental reasoning strategy. ELI5 when and why one should use Pellet for incremental reasoning.
