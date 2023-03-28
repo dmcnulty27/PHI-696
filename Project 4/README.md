@@ -77,7 +77,7 @@ WHERE {
 FILTER (strstarts(str(?class), http://dbpedia.org/ontology/))
 }
 Kata level 5 – 11 points
-Write a SPARQL query that CONSTRUCTS a new graph of all books that have been written by authors who have also written books in the “Science Fiction” genre. The new graph should include the title, author, and genre of each book, as well as the name and birth year if each author.
+A SPARQL query that CONSTRUCTS a new graph of all books that have been written by authors who have also written books in the “Science Fiction” genre. The new graph should include the title, author, and genre of each book, as well as the name and birth year if each author.
 PREFIX rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
 PREFIX dc: http://purl.org/dc/terms/
 PREFIX foaf: http://xmlns.com/foaf/0.1/
@@ -154,7 +154,7 @@ ORDER BY DESC(?publicationDate)
 LIMIT 10
 
 Level 5? -- 21 points
-Return a sparql query using dbpedia that constructs a graph for Stephen King book sales that are the horror genre since 1984 
+This is a sparql query using dbpedia that constructs a graph for Stephen King book sales that are the horror genre since 1984 
 PREFIX dbo: <http://dbpedia.org/ontology/>
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 PREFIX dc: <http://purl.org/dc/elements/1.1/>
