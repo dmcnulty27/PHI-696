@@ -106,63 +106,56 @@ FILTER (strstarts(str(?class), http://dbpedia.org/ontology/))
 
 Kata level 5 – 11 points
 
-A SPARQL query that CONSTRUCTS a new graph of all books that have been written by authors who have also written books in the “Science Fiction” genre. The new graph should include the title, author, and genre of each book, as well as the name and birth year if each author.
+Using dbpedia here is a SPARQL query that CONSTRUCTS a new data set of all books that have been written by authors who have written at least one book in the “Science Fiction” genre. The new data set should include the title, author, and genre of each book, as well as the name and birth year if each author.
 
-PREFIX rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
-
-PREFIX dc: http://purl.org/dc/terms/
-
-PREFIX foaf: http://xmlns.com/foaf/0.1/
-
-PREFIX genre http://example.com/genre#
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX dbr: <http://dbpedia.org/resource/>
+PREFIX dbp: <http://dbpedia.org/property/>
 
 CONSTRUCT {
 
-?book rdf:type dc:Book ;
+?book dbo:author ?author ;
 
-dc:title >?title ;
+dbp:title ?title ;
 
-dc:creator ?author ;
+dbp:genre ?genre .
 
-genre:ScienceFiction ?genre . 
+?author dbo:birthYear ?birthYear ;
 
-?author rdf: type foaf:Person ;
-
-foaf:name ?name ;
-
-foaf:birthyear ?birthYear . 
+dbp:name ?name .
 
 }
 
-WHERE{
+WHERE {
 
-?book rdf:type dc:Book ;
+?book dbo:genre dbr:Science_fiction ;
 
-dc:title ?title
+dbp:title ?title ;
 
-dc:creator ?author ;
+dbo:author ?author .
 
-genre:Sciencefiction ?genre . 
+?author a dbo:Writer ;
 
-?author rdf:type foaf:Person ;
+dbp:name ?name .
 
-foaf:name ?name ; 
+OPTIONAL {
 
-foaf:birthyear ?birthYear . 
+?author dbo:birthYear ?birthYear .
+
+}
 
 FILTER EXISTS {
 
-?otherBook rdf:type dc:Book ;
+?book2 dbo:genre dbr:Science_fiction ;
 
-dc:creator ?author ; 
+dbo:author ?author .
 
-genre:ScienceFicton ?genre . 
-
-Filter (?otherBook !=?book)
+FILTER(?book != ?book2)
 
 }
 
 }
+
 
 
 
