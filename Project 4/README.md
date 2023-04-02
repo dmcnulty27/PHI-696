@@ -11,7 +11,7 @@ With a solution like:
 ```
 def length_of_string(s):
 	return len(s)
-```
+``` 
 	
 Codewars is not limited to traditional programming languages like Python, but also facilitates training for languages like SQL. As you have learned, SQL and SPARQL are both query languages, but what might surprise you is that there is currently no option for training SPARQL in Codewars. This project will go some way to remedy that. 
 
