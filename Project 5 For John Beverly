@@ -51,3 +51,347 @@ You may find the following resources useful:
 The class will be divided evenly. Students are expected to determine allotment, but teams must be comprised of the same number of members (with a +1/-1 deviation allowed). This is an exercise in project management. I encourage you to identify a strategy early for dividing sub-tasks, setting deadlines, and addressing blockers to progress.  
 
 I suggest setting up 15 minute 'stand-up' meetings every other day, where team members are expected to join. zoom call or meet in person and (a) explain what progress they have made on their sub-task, (b) explain what they intend to achieve before the next stand-up, and (c) share any blockers that have to progress. This is an effective way to keep members focused on a team goal, as well as opportunities to overcome challenges. 
+
+
+
+
+Group 2 contains Emanuel, Katie, Josh V (commonly know as V by group member), Cameron, Josh B, Jieming, Lance, Tim(?), also Delaney 
+Please note we DID check this against SHACL playground :) 
+enjoy, if possible.
+
+
+1st constraints begins below
+
+@prefix ex: <http://example.org/> .
+
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+@prefix schema: <http://schema.org/> .
+
+ex:RegistrationShape
+
+a sh:NodeShape ;
+
+sh:targetClass ex:Registration ;
+
+sh:property [    
+
+sh:path ex:lineRegistration ;    
+
+sh:order ex:lineRegistrationOrder ;    
+
+sh:node ex:RegistrationShape ; 
+
+] .
+
+
+ex:lineRegistrationOrder
+
+a sh:Order ;
+
+sh:datatype xsd:integer ;
+
+sh:path ex:addedAt ;
+
+sh:ascending true ;
+
+sh:uniqueMembers true .
+
+
+ex:RegistrationDateShape
+  
+  a sh:NodeShape ;
+  
+  sh:targetClass ex:RegistrationDate ;
+  
+  sh:property [    
+  
+  sh:path ex:RegistrationDate ;    
+  
+  sh:datatype xsd:string ;   
+ 
+ Sh:description
+ 
+ "US Date - format - MM/DD/YYYY" ;     
+
+sh:minCount 1 ;   
+
+sh:maxCount 1 ;   
+
+sh:name "RegistrationDate" ;    
+
+sh:pattern "[1-12]/[1-31]/[1990-2020]”" ;  
+
+] .
+
+
+
+ex:lineRegistrationDateOrder
+
+a sh:Order ;
+
+sh:datatype xsd:integer ;
+
+sh:path ex:RegistrationAt ;
+
+sh:ascending true ;
+
+sh:uniqueMembers true .
+
+
+ex:RegistrationDateANDlineRegistrationOrder
+
+a sh:NodeShape ;
+
+sh:and (ex:RegistrationDateShape ex:lineRegistrationDateOrder) ;
+
+sh:property [    
+
+sh:path rdf:type ;    
+
+sh:datatype xsd:integer ;   
+
+sh:node ex:ValidationResult ;   
+
+sh:resultSeverity sh:Violation ;   
+
+sh:sourceConstraintComponent ex:RegistrationDate ;    
+
+sh:name "RegistrationDateANDlineRegistrationOrder" ; 
+
+sh:focusNode :lineRegistrationDateOrder ;   
+
+sh:value :integer ;   
+
+sh:resultPath schema:RegistrationDate ; 
+
+] .
+
+
+
+2nd Constraints begins below
+
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+
+@prefix ex: <http://example.org/> .
+
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:SpatialLocationShape
+
+a sh:NodeShape ;
+
+sh:targetClass ex:Location ;
+
+sh:property [                  
+
+sh:path ex:spatialcontainment ;              
+
+sh:datatype xsd:anyURI ;                
+
+sh:in (ex:city ex:country ex:continent) ;          
+
+sh:message "Location must be within the specified spatial boundary" ;              
+
+sh:minCount 1 ;           
+
+sh:maxCount 1 ;           
+
+sh:name "Location" ;           
+
+sh:pattern "ex:city|ex:country|ex:continent" ;     
+
+] .
+
+
+3rd Constraint Begins Below 
+
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+
+@prefix ex: <http://example.org/> .
+
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+
+ex:PersonShape 
+
+a sh:NodeShape ;
+
+sh:targetClass ex:Person ;
+
+sh:property [
+
+sh:path ex:gender ;
+
+sh:in (ex:Male ex:Female ex:Nonbinary) ;
+
+sh:message "Gender must be Male, Female, or Nonbinary." ;
+
+] .
+
+
+ex:GenderConstraint 
+
+a sh:NodeShape ;
+
+sh:targetClass ex:Gender ;
+
+sh:property [
+
+sh:path ex:identifiesAs ;
+
+sh:in (ex:Male ex:Female ex:Nonbinary) ;
+
+sh:message "Gender identity must be Male, Female, or Nonbinary." ;
+
+] ;
+
+sh:property [
+
+sh:path ex:mostOfTheTimeIdentifiesAs ;
+
+sh:in (ex:Male ex:Female ex:Nonbinary) ;
+
+sh:message "Most of the time gender identity must be Male, Female, or Nonbinary." ;
+
+] ;
+
+sh:property [
+
+sh:path ex:sometimesIdentifiesAs ;
+
+sh:in (ex:Male ex:Female ex:Nonbinary) ;
+
+sh:message "Sometimes gender identity must be Male, Female, or Nonbinary." ;
+
+] .
+
+
+4th Constraint Begins Below
+
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix ex: <http://example.com/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Define the shapes for the album
+
+ex:AlbumShape
+
+a sh:NodeShape ;
+
+sh:targetClass 
+
+schema:MusicAlbum ;
+
+sh:property [        
+
+sh:path schema:name ;        sh:datatype xsd:string ;        
+
+sh:minLength 3 ;       
+
+sh:message "The album name must be a string of at least 3 characters." ;   
+
+] ;
+
+sh:property [        
+
+sh:path schema:byArtist ;        
+
+sh:node ex:ArtistShape ;        
+
+sh:message "The album artist must be a valid artist object." ;    
+
+] ;
+
+sh:property [        
+
+sh:path schema:datePublished ;       
+
+sh:datatype xsd:date ;       
+
+sh:message "The album release date must be a valid date in the format YYYY-MM-DD." ;   
+
+] ;
+
+sh:property [       
+
+sh:path schema:numTracks ;        
+
+sh:datatype xsd:integer ;        
+
+sh:minInclusive 1 ;        
+
+sh:message "The album must have at least 1 track." ;   
+
+] ;
+
+sh:property [        
+
+sh:path schema:recordLabel ;        
+
+sh:datatype xsd:string ;        
+
+sh:message "The album record label must be a string." ;    
+
+] .
+
+
+
+# Define the shape for the artist object
+
+ex:ArtistShape
+
+a sh:NodeShape ;
+
+sh:targetClass schema:MusicGroup ;
+
+sh:property [        sh:path schema:name ;       
+
+sh:datatype xsd:string ;        
+
+sh:minLength 3 ;        
+
+sh:message "The artist name must be a string of at least 3 characters." ;    ] ;
+
+sh:property [        
+
+sh:path schema:genre ;        sh:datatype xsd:string ;        
+
+sh:message "The artist genre must be a string." ;    
+
+] .
+
+# Define the shape for the user object
+
+ex:UserShape
+
+a sh:NodeShape ;
+
+sh:targetClass schema:Person ;
+
+sh:property [       
+
+sh:path schema:name ;        sh:datatype xsd:string ;        
+
+sh:minLength 3 ;        
+
+sh:message "The user name must be a string of at least 3 characters." ;    
+
+] ;
+
+sh:property [       
+
+sh:path schema:email ;        sh:datatype xsd:string ;       
+
+sh:pattern "[^@]+@[^.]+\\..+" ;       
+
+sh:message "The user email must be a valid email address." ;   
+
+] .
+
