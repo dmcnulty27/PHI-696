@@ -275,7 +275,6 @@ sh:message "Sometimes gender identity must be Male, Female, or Nonbinary." ;
 
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix ex: <http://example.com/> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix schema: <http://schema.org/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
@@ -285,41 +284,38 @@ ex:AlbumShape
 
 a sh:NodeShape ;
 
-sh:targetClass 
-
-schema:MusicAlbum ;
+sh:targetClass schema:MusicAlbum ;
 
 sh:property [        
 
-sh:path schema:name ;        sh:datatype xsd:string ;        
+sh:path schema:name ;        
+
+sh:datatype xsd:string ;       
 
 sh:minLength 3 ;       
 
-sh:message "The album name must be a string of at least 3 characters." ;   
+sh:message "The album name must be a string of at least 3 characters."   
 
 ] ;
 
-sh:property [        
+sh:property [       
 
 sh:path schema:byArtist ;        
 
 sh:node ex:ArtistShape ;        
 
-sh:message "The album artist must be a valid artist object." ;    
-
-] ;
-
-sh:property [        
-
-sh:path schema:datePublished ;       
-
-sh:datatype xsd:date ;       
-
-sh:message "The album release date must be a valid date in the format YYYY-MM-DD." ;   
-
-] ;
+sh:message "The album artist must be a valid artist object."    ] ;
 
 sh:property [       
+
+sh:path schema:datePublished ;        
+
+sh:datatype xsd:date ;        
+
+sh:message "The album release date must be a valid date in the format YYYY-MM-DD."    ] ;
+
+
+sh:property [        
 
 sh:path schema:numTracks ;        
 
@@ -327,20 +323,19 @@ sh:datatype xsd:integer ;
 
 sh:minInclusive 1 ;        
 
-sh:message "The album must have at least 1 track." ;   
+sh:message "The album must have at least 1 track."   
 
 ] ;
 
-sh:property [        
+sh:property [       
 
-sh:path schema:recordLabel ;        
+sh:path schema:recordLabel ;       
 
-sh:datatype xsd:string ;        
+sh:datatype xsd:string ;       
 
-sh:message "The album record label must be a string." ;    
+sh:message "The album record label must be a string."   
 
 ] .
-
 
 
 # Define the shape for the artist object
@@ -351,21 +346,27 @@ a sh:NodeShape ;
 
 sh:targetClass schema:MusicGroup ;
 
-sh:property [        sh:path schema:name ;       
+sh:property [        
 
-sh:datatype xsd:string ;        
+sh:path schema:name ;        
+
+sh:datatype xsd:string ;       
 
 sh:minLength 3 ;        
 
-sh:message "The artist name must be a string of at least 3 characters." ;    ] ;
+sh:message "The artist name must be a string of at least 3 characters."   
 
-sh:property [        
+] ;
+    sh:property [        
 
-sh:path schema:genre ;        sh:datatype xsd:string ;        
+sh:path schema:genre ;        
 
-sh:message "The artist genre must be a string." ;    
+sh:datatype xsd:string ;       
+
+sh:message "The artist genre must be a string."   
 
 ] .
+
 
 # Define the shape for the user object
 
@@ -375,23 +376,28 @@ a sh:NodeShape ;
 
 sh:targetClass schema:Person ;
 
-sh:property [       
+sh:property [        
 
-sh:path schema:name ;        sh:datatype xsd:string ;        
+sh:path schema:name ;        
+
+sh:datatype xsd:string ;       
 
 sh:minLength 3 ;        
 
-sh:message "The user name must be a string of at least 3 characters." ;    
+sh:message "The user name must be a string of at least 3 characters."   
 
 ] ;
 
-sh:property [       
+sh:property [        
 
-sh:path schema:email ;        sh:datatype xsd:string ;       
+sh:path schema:email ;        
 
-sh:pattern "[^@]+@[^.]+\\..+" ;       
+sh:datatype xsd:string ;        
 
-sh:message "The user email must be a valid email address." ;   
+sh:pattern "[^@]+@[^.]+\\..+" ;        
+
+sh:message "The user email must be a valid email address."   
 
 ] .
+
 
