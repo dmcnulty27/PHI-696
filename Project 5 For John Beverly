@@ -59,345 +59,388 @@ Group 2 contains Emanuel, Katie, Josh V (commonly know as V by group member), Ca
 Please note we DID check this against SHACL playground :) 
 enjoy, if possible.
 
-
-1st constraints begins below
-
-@prefix ex: <http://example.org/> .
-
+1.	Constraint for Asymmetry 
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ex: <http://example.com/> .
 
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 
-@prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-ex:RegistrationShape
+ex:AsymmetryShape
 
 a sh:NodeShape ;
 
-sh:targetClass ex:Registration ;
+sh:targetClass ex:relation ;
 
 sh:property [    
 
-sh:path ex:lineRegistration ;    
+sh:path rdf:value ;    
 
-sh:order ex:lineRegistrationOrder ;    
+sh:minCount 1 ;    
 
-sh:node ex:RegistrationShape ; 
+sh:maxCount 1 ;    
 
-] .
-
-
-ex:lineRegistrationOrder
-
-a sh:Order ;
-
-sh:datatype xsd:integer ;
-
-sh:path ex:addedAt ;
-
-sh:ascending true ;
-
-sh:uniqueMembers true .
-
-
-ex:RegistrationDateShape
-  
-  a sh:NodeShape ;
-  
-  sh:targetClass ex:RegistrationDate ;
-  
-  sh:property [    
-  
-  sh:path ex:RegistrationDate ;    
-  
-  sh:datatype xsd:string ;   
- 
- Sh:description
- 
- "US Date - format - MM/DD/YYYY" ;     
-
-sh:minCount 1 ;   
-
-sh:maxCount 1 ;   
-
-sh:name "RegistrationDate" ;    
-
-sh:pattern "[1-12]/[1-31]/[1990-2020]”" ;  
+sh:datatype xsd:string ; 
 
 ] .
 
-
-
-ex:lineRegistrationDateOrder
-
-a sh:Order ;
-
-sh:datatype xsd:integer ;
-
-sh:path ex:RegistrationAt ;
-
-sh:ascending true ;
-
-sh:uniqueMembers true .
-
-
-ex:RegistrationDateANDlineRegistrationOrder
-
-a sh:NodeShape ;
-
-sh:and (ex:RegistrationDateShape ex:lineRegistrationDateOrder) ;
-
-sh:property [    
-
-sh:path rdf:type ;    
-
-sh:datatype xsd:integer ;   
-
-sh:node ex:ValidationResult ;   
-
-sh:resultSeverity sh:Violation ;   
-
-sh:sourceConstraintComponent ex:RegistrationDate ;    
-
-sh:name "RegistrationDateANDlineRegistrationOrder" ; 
-
-sh:focusNode :lineRegistrationDateOrder ;   
-
-sh:value :integer ;   
-
-sh:resultPath schema:RegistrationDate ; 
-
-] .
-
-
-
-2nd Constraints begins below
-
+2.	Constraint for Symmetry 
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 
-@prefix ex: <http://example.org/> .
-
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-
-ex:SpatialLocationShape
-
-a sh:NodeShape ;
-
-sh:targetClass ex:Location ;
-
-sh:property [                  
-
-sh:path ex:spatialcontainment ;              
-
-sh:datatype xsd:anyURI ;                
-
-sh:in (ex:city ex:country ex:continent) ;          
-
-sh:message "Location must be within the specified spatial boundary" ;              
-
-sh:minCount 1 ;           
-
-sh:maxCount 1 ;           
-
-sh:name "Location" ;           
-
-sh:pattern "ex:city|ex:country|ex:continent" ;     
-
-] .
-
-
-3rd Constraint Begins Below 
-
-@prefix sh: <http://www.w3.org/ns/shacl#> .
-
-@prefix ex: <http://example.org/> .
-
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-
-
-ex:PersonShape 
-
-a sh:NodeShape ;
-
-sh:targetClass ex:Person ;
-
-sh:property [
-
-sh:path ex:gender ;
-
-sh:in (ex:Male ex:Female ex:Nonbinary) ;
-
-sh:message "Gender must be Male, Female, or Nonbinary." ;
-
-] .
-
-
-ex:GenderConstraint 
-
-a sh:NodeShape ;
-
-sh:targetClass ex:Gender ;
-
-sh:property [
-
-sh:path ex:identifiesAs ;
-
-sh:in (ex:Male ex:Female ex:Nonbinary) ;
-
-sh:message "Gender identity must be Male, Female, or Nonbinary." ;
-
-] ;
-
-sh:property [
-
-sh:path ex:mostOfTheTimeIdentifiesAs ;
-
-sh:in (ex:Male ex:Female ex:Nonbinary) ;
-
-sh:message "Most of the time gender identity must be Male, Female, or Nonbinary." ;
-
-] ;
-
-sh:property [
-
-sh:path ex:sometimesIdentifiesAs ;
-
-sh:in (ex:Male ex:Female ex:Nonbinary) ;
-
-sh:message "Sometimes gender identity must be Male, Female, or Nonbinary." ;
-
-] .
-
-
-4th Constraint Begins Below
-
-@prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix ex: <http://example.com/> .
-@prefix schema: <http://schema.org/> .
+
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-# Define the shapes for the album
 
-ex:AlbumShape
+ex:SymmetryShape
 
 a sh:NodeShape ;
 
-sh:targetClass schema:MusicAlbum ;
+sh:targetClass ex:relation ;
 
-sh:property [        
+sh:property [    
 
-sh:path schema:name ;        
+sh:path rdf:value ;    
 
-sh:datatype xsd:string ;       
+sh:minCount 1 ;    
 
-sh:minLength 3 ;       
+sh:maxCount 1 ;    
 
-sh:message "The album name must be a string of at least 3 characters."   
+sh:datatype xsd:string 
+
+] .
+
+3.	Constraint Symmetry with a check things not being symmetric 
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+
+@prefix ex: <http://example.com/> .
+
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:SymmetryShape
+
+a sh:NodeShape ;
+
+sh:targetclass ex:relation ;
+
+sh:property [    
+
+sh:path rdf:value ;    
+
+sh:minCount 2 ;    
+
+sh:datatype xsd:string ;    
+
+sh:nodeKind sh:Literal ;    
+
+sh:message "The relation does not have symmetric values"  
 
 ] ;
 
-sh:property [       
+sh:property [    
 
-sh:path schema:byArtist ;        
+sh:path [ 
 
-sh:node ex:ArtistShape ;        
-
-sh:message "The album artist must be a valid artist object."    ] ;
-
-sh:property [       
-
-sh:path schema:datePublished ;        
-
-sh:datatype xsd:date ;        
-
-sh:message "The album release date must be a valid date in the format YYYY-MM-DD."    ] ;
-
-
-sh:property [        
-
-sh:path schema:numTracks ;        
-
-sh:datatype xsd:integer ;        
-
-sh:minInclusive 1 ;        
-
-sh:message "The album must have at least 1 track."   
+sh:inversePath rdf:value 
 
 ] ;
 
-sh:property [       
+sh:minCount 2 ;
 
-sh:path schema:recordLabel ;       
+sh:datatype xsd:string ;
 
-sh:datatype xsd:string ;       
+sh:nodeKind sh:Literal ;
 
-sh:message "The album record label must be a string."   
+sh:message "The relation does not have symmetric values"
+
+] .
+
+4.	Constraint for Reflexivity 
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+
+@prefix ex: <http://example.com/> .
+
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+
+ex:ReflexiveShape
+
+a sh:NodeShape ;
+
+sh:targetClass ex:relation ;
+
+sh:property [    
+
+sh:path rdf:value ;    
+
+sh:minCount 1 ;    
+
+sh:maxCount 1 ;    
+
+sh:datatype xsd:string ; 
+
+] .
+
+5.	Constraint for Irreflexive 
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+
+@prefix ex: <http://example.com/> .
+
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:IrreflexiveShape
+
+a sh:NodeShape ;
+
+sh:targetClass ex:relation ;
+
+sh:property [    
+
+sh:path rdf:value ;    
+
+sh:minCount 1 ;    
+
+sh:maxCount 1 ;    
+
+sh:datatype xsd:string ; 
 
 ] .
 
 
-# Define the shape for the artist object
 
-ex:ArtistShape
+6.	Constraint for Transitivity 
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+
+@prefix ex: <http://example.com/> .
+
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+
+ex:TransitiveShape
 
 a sh:NodeShape ;
 
-sh:targetClass schema:MusicGroup ;
+sh:targetClass ex:relation ;
 
-sh:property [        
+sh:property [    
 
-sh:path schema:name ;        
+sh:path rdf:value ;    
 
-sh:datatype xsd:string ;       
+sh:minCount 1 ;    
 
-sh:minLength 3 ;        
+sh:maxCount 1 ;    
 
-sh:message "The artist name must be a string of at least 3 characters."   
+sh:datatype xsd:string ; 
+
+] .
+
+7.	Constraint for Transitivity and Symmetry 
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+
+@prefix ex: <http://example.com/> .
+
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:TransSymmetryShape
+
+a sh:NodeShape ;
+
+sh:targetClass ex:relation ;
+
+sh:property [    
+
+sh:path ex:hasSource ;    
+
+sh:class ex:Node  
 
 ] ;
-    sh:property [        
 
-sh:path schema:genre ;        
+sh:property [    
 
-sh:datatype xsd:string ;       
+sh:path ex:hasTarget ;    
 
-sh:message "The artist genre must be a string."   
+sh:class ex:Node  ] ;
+
+sh:property [    
+
+sh:path ex:hasValue ;    
+
+sh:or (       [ sh:datatype xsd:string ; 
+
+sh:in ( "same, opposite" ) 
+
+]
+
+[ sh:datatype xsd:boolean ]
+
+)
+
+] ;
+
+sh:property [    
+
+sh:path ex:hasType ;    
+
+sh:in ( "symmetric, transitive" )  
+
+] .
+
+8.	Constraint for Asymmetry and Reflexivity 
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+
+@prefix ex: <http://example.com/> .
+
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+
+ex:AsymReflexShape
+
+a sh:NodeShape ;
+
+sh:targetClass ex:relation ;
+
+sh:property [    
+
+sh:path ex:hasSource ;    
+
+sh:class ex:Node 
+
+] ;
+
+sh:property [    
+
+
+sh:path ex:hasTarget ;    
+
+sh:class ex:Node  
+
+] ;
+
+sh:property [    
+
+sh:path ex:hasValue ;    
+
+sh:datatype xsd:boolean ;    
+
+sh:in ( true )  ] ;
+
+sh:property [    
+
+sh:path ex:hasType ;    
+
+sh:in ( "asymmetric" )  
+
+] .
+
+9.	Constraint for disjoint of symmetry and asymmetry 
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+
+@prefix ex: <http://example.com/> .
+
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:symmetricalPropertyShape
+
+a sh:PropertyShape ;
+
+sh:path ex:symmetricalProperty ;
+
+sh:propertyConstraint [
+
+sh:symmetrical true ;
 
 ] .
 
 
-# Define the shape for the user object
+ex:asymmetricalPropertyShape
 
-ex:UserShape
+a sh:PropertyShape ;
+
+sh:path ex:asymmetricalProperty ;
+
+sh:propertyConstraint [
+
+sh:asymmetrical true ;
+
+] .
+
+ex:MyClassShape
 
 a sh:NodeShape ;
 
-sh:targetClass schema:Person ;
 
-sh:property [        
+sh:property [
 
-sh:path schema:name ;        
-
-sh:datatype xsd:string ;       
-
-sh:minLength 3 ;        
-
-sh:message "The user name must be a string of at least 3 characters."   
-
-] ;
-
-sh:property [        
-
-sh:path schema:email ;        
-
-sh:datatype xsd:string ;        
-
-sh:pattern "[^@]+@[^.]+\\..+" ;        
-
-sh:message "The user email must be a valid email address."   
+sh:xoneOf ( ex:symmetricalPropertyShape ex:asymmetricalPropertyShape ) ;
 
 ] .
+
+
+
+10.	Constraint for PropertyIn for Asymmetrical and Irrelexive 
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+
+@prefix ex: <http://example.com/> .
+
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+
+ex:asymmetricalPropertyShape
+
+a sh:PropertyShape ;
+
+sh:path ex:asymmetricalProperty ;
+
+sh:propertyConstraint [
+
+sh:asymmetrical true ;
+
+] .
+
+ex:irreflexivePropertyShape
+
+a sh:PropertyShape ;
+
+sh:path ex:irreflexiveProperty ;
+
+sh:propertyConstraint [
+
+sh:irreflexive true ;
+
+] .
+
+ex:MyClassShape
+
+a sh:NodeShape ;
+
+sh:property [
+
+sh:or ( ex:asymmetricalPropertyShape ex:irreflexivePropertyShape ) ;
+
+] .
+
+
 
 
