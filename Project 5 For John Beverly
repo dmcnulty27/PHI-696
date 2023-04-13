@@ -60,6 +60,7 @@ Please note we DID check this against SHACL playground :)
 enjoy, if possible.
 
 1.	Constraint for Asymmetry 
+a.	Our constraint checks for asymmetric patterns in a graph
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 
 @prefix ex: <http://example.com/> .
@@ -80,13 +81,14 @@ sh:path rdf:value ;
 
 sh:minCount 1 ;    
 
-sh:maxCount 1 ;    
+sh:maxCount 4 ;    
 
 sh:datatype xsd:string ; 
 
 ] .
 
 2.	Constraint for Symmetry 
+a.	Our constraint checks for symmetry patterns in a graph 
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 
 @prefix ex: <http://example.com/> .
@@ -108,13 +110,14 @@ sh:path rdf:value ;
 
 sh:minCount 1 ;    
 
-sh:maxCount 1 ;    
+sh:maxCount 4 ;    
 
 sh:datatype xsd:string 
 
 ] .
 
 3.	Constraint Symmetry with a check things not being symmetric 
+a.	Our constraint is meant to check for symmetry in a graph and check for when things are not symmetric
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 
 @prefix ex: <http://example.com/> .
@@ -133,7 +136,9 @@ sh:property [
 
 sh:path rdf:value ;    
 
-sh:minCount 2 ;    
+sh:minCount 2 ;  
+
+sh:maxCount 6 ; 
 
 sh:datatype xsd:string ;    
 
@@ -147,11 +152,13 @@ sh:property [
 
 sh:path [ 
 
-sh:inversePath rdf:value 
+sh:inversePath sh:Literal  
 
 ] ;
 
 sh:minCount 2 ;
+
+sh:minCount 6 ;
 
 sh:datatype xsd:string ;
 
@@ -161,7 +168,10 @@ sh:message "The relation does not have symmetric values"
 
 ] .
 
-4.	Constraint for Reflexivity 
+
+4.	Constraint for Reflexivity \
+a.	Our constraint checks for reflexivity in a graph 
+
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 
 @prefix ex: <http://example.com/> .
@@ -183,13 +193,14 @@ sh:path rdf:value ;
 
 sh:minCount 1 ;    
 
-sh:maxCount 1 ;    
+sh:maxCount 4 ;    
 
 sh:datatype xsd:string ; 
 
 ] .
 
 5.	Constraint for Irreflexive 
+a.	Our constraint checks for irreflexively in a graph 
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 
 @prefix ex: <http://example.com/> .
@@ -210,7 +221,7 @@ sh:path rdf:value ;
 
 sh:minCount 1 ;    
 
-sh:maxCount 1 ;    
+sh:maxCount 6 ;    
 
 sh:datatype xsd:string ; 
 
@@ -219,6 +230,8 @@ sh:datatype xsd:string ;
 
 
 6.	Constraint for Transitivity 
+a.	Our constraint check for transitivity in a graph
+
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 
 @prefix ex: <http://example.com/> .
@@ -240,13 +253,14 @@ sh:path rdf:value ;
 
 sh:minCount 1 ;    
 
-sh:maxCount 1 ;    
+sh:maxCount 6 ;    
 
 sh:datatype xsd:string ; 
 
 ] .
 
 7.	Constraint for Transitivity and Symmetry 
+a.	Our constraint checks for when a graph is both transitivity and symmetry in a graph. 
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 
 @prefix ex: <http://example.com/> .
@@ -302,6 +316,7 @@ sh:in ( "symmetric, transitive" )
 ] .
 
 8.	Constraint for Asymmetry and Reflexivity 
+a.	Our Constraint checks a graph for being both asymmetric and reflexivity. 
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 
 @prefix ex: <http://example.com/> .
@@ -351,6 +366,7 @@ sh:in ( "asymmetric" )
 ] .
 
 9.	Constraint for disjoint of symmetry and asymmetry 
+a.	Our constraint check for when a graph is either symmetric or asymmetric 
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 
 @prefix ex: <http://example.com/> .
@@ -398,6 +414,7 @@ sh:xoneOf ( ex:symmetricalPropertyShape ex:asymmetricalPropertyShape ) ;
 
 
 10.	Constraint for PropertyIn for Asymmetrical and Irrelexive 
+a.	Our constraint checks for when a graph has a propertyIn that is both asymmetric and irreflexive. 
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 
 @prefix ex: <http://example.com/> .
