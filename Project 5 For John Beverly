@@ -126,39 +126,38 @@ a.	Our constraint is meant to check for symmetry in a graph and check for when t
 
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+
 ex:SymmetryShape
 
 a sh:NodeShape ;
 
-sh:targetclass ex:relation ;
+sh:targetClass ex:relation ;
 
-sh:property [    
+sh:property [        
 
-sh:path rdf:value ;    
+sh:path rdf:value ;        
 
-sh:minCount 2 ;  
+sh:minCount 2 ;        
 
-sh:maxCount 6 ; 
+sh:datatype xsd:string ;        
 
-sh:datatype xsd:string ;    
+sh:nodeKind sh:Literal ;        
 
-sh:nodeKind sh:Literal ;    
-
-sh:message "The relation does not have symmetric values"  
+sh:message "The relation does not have symmetric values"    
 
 ] ;
 
-sh:property [    
+sh:property [        
 
-sh:path [ 
+sh:path [       
 
-sh:inversePath sh:Literal  
+sh:inversePath ex:inverseRelation     
 
 ] ;
 
-sh:minCount 2 ;
+sh:minCount 4 ;
 
-sh:minCount 6 ;
+sh:maxCount 8 ;
 
 sh:datatype xsd:string ;
 
@@ -167,6 +166,8 @@ sh:nodeKind sh:Literal ;
 sh:message "The relation does not have symmetric values"
 
 ] .
+
+
 
 
 4.	Constraint for Reflexivity \
