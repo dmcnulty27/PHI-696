@@ -445,5 +445,48 @@ sh:or ( ex:asymmetricalPropertyShape ex:irreflexivePropertyShape ) ;
 ] .
 
 
+11.	Constraint for hasProperty
+a.	An example of when this constrain might be used is in a real estate application that manages multiple properties. Such that the three associated properties rdf:value (the monetary value of a given property), ex:b (the number of bedrooms on a given property) and ex:c (the number of bathrooms on a given property). The constraint can be applied to ensure that any of the data associated with ex:property class meets these requirements, preventing incomplete or incorrect data being entered into the system. 
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix ex: <http://example.com/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:hasProperty
+
+a sh:NodeShape ;
+
+sh:targetClass ex:property ;
+
+sh:property [    
+
+sh:path rdf:value ;        
+
+sh:minCount 1 ;        
+
+sh:maxCount 8 ;      
+
+] ;
+  
+
+sh:property [    
+
+sh:path ex:b ;    
+
+sh:minCount 1 ;    
+
+sh:maxCount 8 ;  
+
+] ;
+
+sh:property [    
+
+sh:path ex:c ;    
+
+sh:minCount 1 ;    
+
+sh:maxCount 8 ;  
+
+] .
 
 
