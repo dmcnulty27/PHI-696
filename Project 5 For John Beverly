@@ -164,7 +164,7 @@ sh:property [
 
 sh:path [ 
 
-sh:inversePath rdf:value 
+sh:inversePath ex:property 
 
 ] ;
 
