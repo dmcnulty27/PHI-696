@@ -125,14 +125,14 @@ sh:datatype xsd:string
 
 
 3.	Constraint Symmetry with a check thing not being symmetric. 
-a.	Our constraint is meant to check for symmetry in a graph and check for when things are not symmetric.
+a.	Our constraint is meant to check for symmetry in a graph and check for when things are not symetric.
 
 b.	An example of when to use this constraint would be if we had a graph that represented followers on Twitter. Our constraint would check for cases of when A follows B than B should follow A. This constraint would indeed produce the message “The relation does not have symmetric values" when this is not the case. 
 To use this constraint in this was one would start the constraint with something like 
+ex:TwitterFollowersSymmetryShape and follow the general format of this constraint. 
 
 c.	a -> b ^ b -> a
-
-ex:TwitterFollowersSymmetryShape and follow the general format of this constraint. 
+ 
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix ex: <http://example.com/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -183,7 +183,7 @@ sh:message "The relation does not have symmetric values"
 4.	Constraint for Reflexivity 
 a.	Our constraint checks for reflexivity in a graph.
 
-b.	An example of when one would use this constraint would be if we had a graph that represented published philosophers to check for when philosophers are self-referencing their own work in a novel piece. Such that when a philosopher published novel work that references older work this constraint would alert to the self-reference. One would change ex:ReflexivityShape to ex:PhilosopherReferenceReflexivityShape and follow the format of the constraint below.  
+b.	An example of when one would use this constraint would be if we had a graph that represented published philosophers to check for when philosophers are self-referencing themselves in a novel piece. Such that when a philosopher published novel work that references that philosophers in a self-referential way this constraint would alert to the self-reference. One would change ex:ReflexivityShape to ex:PhilosopherReferenceReflexivityShape and follow the format of the constraint below.  
 
 c.	a -> a
 
