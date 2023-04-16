@@ -104,23 +104,131 @@ c.	a -> b ^ b -> a
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-ex:SymmetryShape
+ex:SymmetricRelationShape
+    
+    a sh:NodeShape ;
+    
+    sh:targetClass ex:Relation ;
+    sh:property [       
+ sh:path ex:hasSource ;    
+ ] ;
+    sh:property [        
 
-a sh:NodeShape ;
+sh:path ex:hasTarget ;        
 
-sh:targetClass ex:relation ;
+sh:minCount 1 ;        
 
-sh:property [    
+sh:maxCount 1 ;        
 
-sh:path rdf:value ;    
+sh:message "A relation must have exactly one target"   
 
-sh:minCount 1 ;    
+] ;
 
-sh:maxCount 4 ;    
+sh:property [        
 
-sh:datatype xsd:string 
+sh:path ex:hasInverseRelation ;       
 
-] .
+sh:minCount 0 ;        
+
+sh:maxCount 1 ;        
+
+sh:class ex:Relation ;        
+
+sh:node [           
+
+sh:property [                
+
+sh:path ex:hasSource ;            
+
+
+] ;
+
+sh:property [                
+
+sh:path ex:hasTarget ;                
+
+sh:minCount 1 ;                
+
+sh:maxCount 1 ;                
+
+sh:message "An inverse relation must have exactly one target"            
+
+] ;
+
+sh:property [                
+
+sh:path ex:hasInverseRelation ;                
+
+sh:minCount 0 ;                
+
+sh:maxCount 1 ;                
+
+sh:class ex:Relation ;                
+
+sh:node [                   
+
+sh:property [                        
+
+sh:path ex:hasSource ;                        
+
+sh:equals [ 
+
+sh:path [ 
+
+rdf:reverseProperty ex:hasTarget 
+]
+ ]
+] ;
+
+sh:property [                        
+
+sh:path ex:hasTarget ;                        
+
+sh:equals [ 
+
+sh:path [ 
+
+rdf:reverseProperty ex:hasSource 
+
+] 
+
+]
+                    ]
+                ]
+            ] ;
+
+sh:property [               
+
+sh:path ex:hasSource ;                
+
+sh:equals [
+
+sh:path [ 
+
+rdf:reverseProperty ex:hasTarget 
+
+] 
+
+]
+            ] ;
+
+sh:property [                
+
+sh:path ex:hasTarget ;                
+
+sh:equals [ 
+
+sh:path [ 
+
+rdf:reverseProperty ex:hasSource 
+
+] 
+
+]
+
+]
+        ]
+    ] .
 
 
 
